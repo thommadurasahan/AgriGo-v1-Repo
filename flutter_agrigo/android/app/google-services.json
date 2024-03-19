@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "914691097086",
+    "project_id": "agrigo-by-enigma",
+    "storage_bucket": "agrigo-by-enigma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914691097086:android:d7fd0447828bb205d7c0af",
+        "android_client_info": {
+          "package_name": "com.example.flutter_agrigo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcvSE0Npq6HXGmlavG-Dne7HNofaH2pnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
