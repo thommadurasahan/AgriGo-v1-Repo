@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold( 
         appBar: AppBar(
-          title: Text('GetStart'),
+          title: const Text('GetStart'),
           backgroundColor: const Color.fromARGB(255, 14, 214, 21),
         ),
         body: Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 78),
+          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 78),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 7),
+              const SizedBox(height: 7),
               Text(
                 "Menu",
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Expanded(
                 child: ListView(
                   children: [
@@ -44,8 +46,8 @@ class MenuPage extends StatelessWidget {
     return ListTile(
       title: Row(
         children: [
-          Icon(Icons.arrow_forward),
-          SizedBox(width: 10),
+          const Icon(Icons.arrow_forward),
+          const SizedBox(width: 10),
           Text(title),
         ],
       ),

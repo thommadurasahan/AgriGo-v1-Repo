@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('ලොග් වීම'),
+          title: const Text('ලොග් වීම'),
           backgroundColor: const Color.fromARGB(255, 14, 214, 21),
         ),
         body: Center(
@@ -15,19 +17,19 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
 
-              CircleAvatar(
+              const CircleAvatar(
               radius: 80.0, // Adjust radius for desired size
               backgroundImage: AssetImage('assets/User.png'), // Replace with your image path
             ),
-            SizedBox(height: 20.0), // Add spacing between image and text
+            const SizedBox(height: 20.0), // Add spacing between image and text
             
             // User text (replace with actual user data)
-            Text(
+            const Text(
               'ආයුබෝවන්', // Replace with user name variable
               style: TextStyle(fontSize: 18.0),
             ),
 
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: TextField(
                   decoration: InputDecoration(
@@ -35,7 +37,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: TextField(
                   obscureText: true,
@@ -47,13 +49,13 @@ class LoginPage extends StatelessWidget {
               Container(
                 width: 180,
                 height: 55,
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                 onPressed: () {},
-                child: Text('ලොග් වන්න'),
                 style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 3, 252, 11),
+                backgroundColor: const Color.fromARGB(255, 3, 252, 11),
                     ),
+                child: const Text('ලොග් වන්න'),
                   ),
                 ),
             ],

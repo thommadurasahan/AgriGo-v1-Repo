@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GetStart extends StatelessWidget {
+  const GetStart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('GetStart'),
+          title: const Text('GetStart'),
           backgroundColor: const Color.fromARGB(255, 14, 214, 21),
         ),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 26,
             vertical: 62,
           ),
@@ -24,7 +25,7 @@ class GetStart extends StatelessWidget {
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
-                    Align(
+                    const Align(
                       alignment: Alignment.bottomCenter,
                       child: Text(
                         "Category",
@@ -43,7 +44,7 @@ class GetStart extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 56,
               ),
               ElevatedButton(
@@ -52,22 +53,22 @@ class GetStart extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 14, 214, 21),
-                  minimumSize: Size(double.infinity, 57),
+                  minimumSize: const Size(double.infinity, 57),
                 ),
-                child: Text("ආරම්භ කරන්න"),
+                child: const Text("ආරම්භ කරන්න"),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey,
-                  minimumSize: Size(double.infinity, 57),
+                  minimumSize: const Size(double.infinity, 57),
                 ),
-                child: Text("Login"),
+                child: const Text("Login"),
               ),
-              Spacer(
+              const Spacer(
                 flex: 43,
               ),
             ],

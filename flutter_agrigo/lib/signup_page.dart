@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -17,16 +19,16 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
         backgroundColor: const Color.fromARGB(255, 14, 214, 21),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             // text
-            Text(
+            const Text(
                  'අප වෙත අලුත් නම් ඔබගේ විද්‍යුත් ලිපිනය තහවුරු කර ලියපදිංචිය සම්පූර්ණ කිරීමට ඉදිරියට යන්න',
                   style: TextStyle(
                   fontSize: 12.0,
@@ -36,33 +38,33 @@ class _SignUpPageState extends State<SignUpPage> {
             // Enter Email
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'විද්‍යුත් ලිපිනය'),
+              decoration: const InputDecoration(labelText: 'විද්‍යුත් ලිපිනය'),
               keyboardType: TextInputType.emailAddress,
             ),
             // Comfirm Email
             ElevatedButton(
               onPressed: () {},
-              child: Text('තහවුරු කරන්න'),
+              child: const Text('තහවුරු කරන්න'),
             ),
             // Enter First Name
             TextField(
               controller: _firstNameController,
-              decoration: InputDecoration(labelText: 'මුල් නම'),
+              decoration: const InputDecoration(labelText: 'මුල් නම'),
             ),
             // Enter Last Name
             TextField(
               controller: _lastNameController,
-              decoration: InputDecoration(labelText: 'අවසාන නම'),
+              decoration: const InputDecoration(labelText: 'අවසාන නම'),
             ),
             // Enter Password
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'මුරපදය'),
+              decoration: const InputDecoration(labelText: 'මුරපදය'),
               obscureText: true,
             ),
             // Checkbox for Terms and Conditions
             CheckboxListTile(
-              title: Text('ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
+              title: const Text('ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
                       style: TextStyle(
                       fontSize: 12.0,
                       color: Colors.black,
@@ -81,7 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   // Show error message if terms not agreed to
                 }
               },
-              child: Text('ලියාපදිංචි වන්න'),
+              child: const Text('ලියාපදිංචි වන්න'),
             ),
           ],
         ),
