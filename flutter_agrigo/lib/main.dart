@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,54 +16,88 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class HomePage extends StatefulWidget 
+{
+  const HomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _HomePageState extends State<HomePage> 
+{
+  late final TextEditingController _emailController;
+  late final TextEditingController _passwordController;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+@override
+  void initState() 
+  {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+  void dispose() 
+  {
+    _emailController.dispose();
+    _passwordController.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) 
+  {
+    return Scaffold
+    (
+      appBar: AppBar
+      (
+        title: const Text('Register'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Column
+      (
+        children: 
+        [
+          TextField
+          (
+            controller: _emailController,
+            decoration: const InputDecoration
+            (
+              labelText: 'Email',
+              hintText: 'Enter your email'
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          TextField
+          (
+            controller: _passwordController,
+            decoration: const InputDecoration
+            (
+              labelText: 'Password',
+              hintText: 'Enter your password'
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          ),
+          TextButton
+          (
+            onPressed: () async 
+            {
+              final email = _emailController.text;
+              final password = _passwordController.text;
+              final userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword
+              (
+                email: email, password: password,
+              );
+              print(userCredential);
+            }, 
+            child: const Text('Register')
+          ),
+        ],
       ),
     );
   }
