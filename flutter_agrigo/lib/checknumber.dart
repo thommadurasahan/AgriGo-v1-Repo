@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CheckNumber extends StatelessWidget {
+  const CheckNumber({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +10,7 @@ class CheckNumber extends StatelessWidget {
         width: double.maxFinite,
         child: Column(
           children: [
-            SizedBox(height: 250),
+            const SizedBox(height: 250),
             Expanded(
               child: SingleChildScrollView(
                 child: _buildFour(context),
@@ -22,24 +24,24 @@ class CheckNumber extends StatelessWidget {
 
   Widget _buildFour(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 11,
         right: 14,
         bottom: 249,
       ),
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 17,
         vertical: 31,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: Color(0xFFDDDDDD), // Change color as needed
+        color: const Color(0xFFDDDDDD), // Change color as needed
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-       Padding(
+       const Padding(
   padding: EdgeInsets.only(left: 68),
   child: Text(
     "අංකය පරික්ශා කිරීම",
@@ -50,12 +52,12 @@ class CheckNumber extends StatelessWidget {
   ),
 ),
 
-         SizedBox(height: 50),
+         const SizedBox(height: 50),
 Padding(
-  padding: EdgeInsets.only(left: 0),
+  padding: const EdgeInsets.only(left: 0),
   child: TextField(
     textAlign: TextAlign.center, // Align text to the center
-    decoration: InputDecoration(
+    decoration: const InputDecoration(
       border: OutlineInputBorder(), // Add a border around the TextField
     ),
     onTap: () {
@@ -66,7 +68,7 @@ Padding(
     controller: TextEditingController(
       text: "(+94)-"" -"" -"" -"" -"" -"" -"" -"" " // Set initial text
     ),
-    style: TextStyle(fontSize: 25), // Change style as needed
+    style: const TextStyle(fontSize: 25), // Change style as needed
   ),
 ),
 
@@ -75,26 +77,26 @@ Padding(
 
 
 
-          SizedBox(height: 30),
-          Align(
+          const SizedBox(height: 30),
+          const Align(
             alignment: Alignment.center,
             child: Text(
               "ඔබේ දුරකතන අංකය නිවැරැදි ද?",
               style: TextStyle(fontSize: 16), // Change style as needed
             ),
           ),
-        SizedBox(height: 21),
-SizedBox(height: 21),
+        const SizedBox(height: 21),
+const SizedBox(height: 21),
 Container(
 
   child: ElevatedButton(
     onPressed: () {}, // Add onPressed logic as needed
     style: ElevatedButton.styleFrom(
-      primary: Colors.green, // Make the button transparent to show container's background color
+      backgroundColor: Colors.green, // Make the button transparent to show container's background color
     ),
     child: Container(
       alignment: Alignment.center,
-      child: Text(
+      child: const Text(
         "නිවැරැදියි",
         style: TextStyle(color: Colors.white), // Set text color to white
       ),
@@ -104,12 +106,12 @@ Container(
 
 
           
-          SizedBox(height: 27),
+          const SizedBox(height: 27),
 GestureDetector(
   onTap: () {
     // Add your click logic here
   },
-  child: Align(
+  child: const Align(
     alignment: Alignment.center,
     child: Text(
       "සංස්කරණය කරන්න",
@@ -120,7 +122,7 @@ GestureDetector(
     ),
   ),
 ),
-SizedBox(height: 37),
+const SizedBox(height: 37),
 
 
         ],
@@ -130,7 +132,7 @@ SizedBox(height: 37),
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: CheckNumber(),
   ));
 }

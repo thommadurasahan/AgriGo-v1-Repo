@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ConfirmNumber extends StatelessWidget {
+  const ConfirmNumber({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -9,7 +11,7 @@ class ConfirmNumber extends StatelessWidget {
           width: 429,
           child: Column(
             children: [
-              SizedBox(height: 250),
+              const SizedBox(height: 250),
               Expanded(
                 child: SingleChildScrollView(
                   child: _buildFour(context),
@@ -24,23 +26,23 @@ class ConfirmNumber extends StatelessWidget {
 
   Widget _buildFour(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 11,
         right: 13,
         bottom: 249,
       ),
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 11,
         vertical: 32,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-         color: Color(0xFFDDDDDD), // Change color as needed
+         color: const Color(0xFFDDDDDD), // Change color as needed
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
+          const Align(
   alignment: Alignment.center,
   child: Padding(
     padding: EdgeInsets.only(left: 75),
@@ -54,8 +56,8 @@ class ConfirmNumber extends StatelessWidget {
   ),
 ),
 
-          SizedBox(height: 16),
-          SizedBox(
+          const SizedBox(height: 16),
+          const SizedBox(
             width: 380,
             child: Text(
               "කරුණාකර SMS මඟින් ඔබට එවන ලද OTP අංකය ඇතුළත් කරන්න",
@@ -66,20 +68,20 @@ class ConfirmNumber extends StatelessWidget {
             ),
           ),
 
-         SizedBox(height: 65),
-TextField(
+         const SizedBox(height: 65),
+const TextField(
   decoration: InputDecoration(
     hintText: 'OTP number', // Add your hint text here
    border: OutlineInputBorder() , // Add border for the TextField
   ),
 ),
 
-          SizedBox(height: 34),
-          Text(
+          const SizedBox(height: 34),
+          const Text(
             "කාලය නැවත සකස් වීම : 01:06",
             style: TextStyle(fontSize: 20), // Change style as needed
           ),
-        SizedBox(height: 28),
+        const SizedBox(height: 28),
 
        Container(
   child: ElevatedButton(
@@ -87,9 +89,9 @@ TextField(
       // Add onPressed logic as needed
     },
     style: ElevatedButton.styleFrom(
-      primary: Colors.green, // Set the background color to green
+      backgroundColor: Colors.green, // Set the background color to green
     ),
-    child: Text("තහවුරු කරන්න"),
+    child: const Text("තහවුරු කරන්න"),
   ),
 ),
 
@@ -101,7 +103,7 @@ TextField(
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: ConfirmNumber(),
   ));
 }
