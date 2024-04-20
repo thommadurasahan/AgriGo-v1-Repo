@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PageScreen extends StatelessWidget {
+  const PageScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -12,7 +14,7 @@ class PageScreen extends StatelessWidget {
             child: Column(
               children: [
                 _buildThree(context),
-                SizedBox(height: 3),
+                const SizedBox(height: 3),
                 SizedBox(
                   height: 557,
                   width: double.maxFinite,
@@ -27,11 +29,11 @@ class PageScreen extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               _buildForty(context),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               _buildSeven(context),
-                              SizedBox(height: 13),
+                              const SizedBox(height: 13),
                               _buildFive(context),
-                              SizedBox(height: 86),
+                              const SizedBox(height: 86),
                             ],
                           ),
                         ),
@@ -54,8 +56,8 @@ class PageScreen extends StatelessWidget {
       color: Colors.lightGreenAccent, // Change to desired color
       child: Column(
         children: [
-          SizedBox(height: 19),
-          Padding(
+          const SizedBox(height: 19),
+          const Padding(
             padding: EdgeInsets.only(
               left: 8,
               right: 14,
@@ -76,7 +78,7 @@ class PageScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 14),
+          const SizedBox(height: 14),
           SizedBox(
             height: 293,
             width: double.maxFinite,
@@ -92,11 +94,11 @@ class PageScreen extends StatelessWidget {
                   alignment: Alignment.bottomLeft,
                   child: Container(
                     height: 10,
-                    margin: EdgeInsets.only(
+                    margin: const EdgeInsets.only(
                       left: 161,
                       bottom: 21,
                     ),
-                    child: SizedBox(
+                    child: const SizedBox(
                       width: 100,
                       child: Placeholder(), // Placeholder for AnimatedSmoothIndicator
                     ),
@@ -121,12 +123,12 @@ class PageScreen extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 7,
                 vertical: 4,
               ),
               color: Colors.white, // Change to desired color
-              child: Column(
+              child: const Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -144,8 +146,8 @@ class PageScreen extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: Container(
               width: 319,
-              margin: EdgeInsets.only(left: 8),
-              child: Text(
+              margin: const EdgeInsets.only(left: 8),
+              child: const Text(
                 "නුවරඑළියේ හොඳම කැරට්    අඩුම මිලට...",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -173,7 +175,7 @@ class PageScreen extends StatelessWidget {
             color: Colors.white, // Change to desired color
             alignment: Alignment.topLeft,
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: EdgeInsets.only(bottom: 19),
@@ -190,7 +192,7 @@ class PageScreen extends StatelessWidget {
             width: 65,
             color: Colors.white, // Change to desired color
             alignment: Alignment.topRight,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 21,
               right: 3,
             ),
@@ -198,7 +200,7 @@ class PageScreen extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 124,
                 top: 27,
                 right: 67,
@@ -210,8 +212,8 @@ class PageScreen extends StatelessWidget {
                   Container(
                     height: 32,
                     width: 237,
-                    margin: EdgeInsets.only(left: 1),
-                    child: Stack(
+                    margin: const EdgeInsets.only(left: 1),
+                    child: const Stack(
                       alignment: Alignment.center,
                       children: [
                         Text(
@@ -225,8 +227,8 @@ class PageScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 1),
-                  Text(
+                  const SizedBox(height: 1),
+                  const Text(
                     "Dambulla, SriLanka",
                     style: TextStyle(fontSize: 16), // Adjust the style as needed
                   ),
@@ -242,18 +244,18 @@ class PageScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildFive(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 9,
         vertical: 17,
       ),
       color: Colors.white, // Change to desired color
       child: Column(
         children: [
-          SizedBox(height: 36),
+          const SizedBox(height: 36),
           Container(
             width: 406,
-            margin: EdgeInsets.only(right: 5),
-            child: Text(
+            margin: const EdgeInsets.only(right: 5),
+            child: const Text(
               "දුරකතන අංකය : 0765695214\n\nලිපිනය          : 45/B, අනුරාධපුර පාර,\r\n                  කැකිරාව\n\nඅප ගැන        : ඔබට අවශ්‍ය සියලුම එළවලු තොග සහ\n                  සිල්ලර මිලට අප වෙතින් ලබා ගත හැක.",
               maxLines: 7,
               overflow: TextOverflow.ellipsis,
@@ -272,7 +274,7 @@ class PageScreen extends StatelessWidget {
       child: Container(
         height: 78,
         width: 429,
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 24,
           vertical: 6,
         ),
@@ -285,7 +287,7 @@ class PageScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       top: 36,
                       bottom: 1,
@@ -296,7 +298,7 @@ class PageScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 44),
+                    padding: const EdgeInsets.only(left: 44),
                     child: Column(
                       children: [
                         Container(
@@ -304,8 +306,8 @@ class PageScreen extends StatelessWidget {
                           width: 39,
                           color: Colors.white, // Change to desired color
                         ),
-                        SizedBox(height: 6),
-                        Text(
+                        const SizedBox(height: 6),
+                        const Text(
                           "Categories",
                           style: TextStyle(fontSize: 16), // Adjust the style as needed
                         ),
@@ -313,7 +315,7 @@ class PageScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 30,
                       top: 3,
                       bottom: 1,
@@ -324,11 +326,11 @@ class PageScreen extends StatelessWidget {
                         Container(
                           height: 29,
                           width: 29,
-                          margin: EdgeInsets.only(left: 27),
+                          margin: const EdgeInsets.only(left: 27),
                           color: Colors.white, // Change to desired color
                         ),
-                        SizedBox(height: 4),
-                        Text(
+                        const SizedBox(height: 4),
+                        const Text(
                           "Notifications",
                           style: TextStyle(fontSize: 16), // Adjust the style as needed
                         ),
@@ -336,7 +338,7 @@ class PageScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 37,
                       top: 10,
                       bottom: 1,
@@ -348,8 +350,8 @@ class PageScreen extends StatelessWidget {
                           width: 25,
                           color: Colors.white, // Change to desired color
                         ),
-                        SizedBox(height: 1),
-                        Text(
+                        const SizedBox(height: 1),
+                        const Text(
                           "Menu",
                           style: TextStyle(fontSize: 16), // Adjust the style as needed
                         ),

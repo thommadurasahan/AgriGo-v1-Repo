@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CatogaryVeg extends StatelessWidget {
+  const CatogaryVeg({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -12,28 +14,28 @@ class CatogaryVeg extends StatelessWidget {
             children: [
               Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 29.0,
                   vertical: 14.0,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.lightGreen,
                 ),
                 child: Column(
                   children: [
                     Text(
                       "Categories",
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    SizedBox(height: 53.0),
+                    const SizedBox(height: 53.0),
                     _buildCategoriesStack(context),
-                    SizedBox(height: 53.0),
+                    const SizedBox(height: 53.0),
                   ],
                 ),
               ),
-              SizedBox(height: 17.0),
+              const SizedBox(height: 17.0),
               _buildHomeStack(context),
-              SizedBox(height: 1.0),
+              const SizedBox(height: 1.0),
             ],
           ),
         ),
@@ -49,7 +51,7 @@ class CatogaryVeg extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 20.0,
         mainAxisSpacing: 20.0,
-        children: List.generate(5, (index) => CategoriesstackItemWidget()),
+        children: List.generate(5, (index) => const CategoriesstackItemWidget()),
       ),
     );
   }
@@ -64,15 +66,15 @@ class CatogaryVeg extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: EdgeInsets.only(top: 4.0),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.only(top: 4.0),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 10.0,
                 vertical: 6.0,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
               ),
-              child: Row(
+              child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Padding(
@@ -153,11 +155,13 @@ class CatogaryVeg extends StatelessWidget {
 }
 
 class CategoriesstackItemWidget extends StatelessWidget {
+  const CategoriesstackItemWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue,
-      child: Center(
+      child: const Center(
         child: Text("Category"),
       ),
     );
