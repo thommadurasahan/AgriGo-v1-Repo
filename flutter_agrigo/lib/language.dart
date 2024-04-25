@@ -1,41 +1,39 @@
 import 'package:flutter/material.dart';
 
 class Language extends StatefulWidget {
-  const Language({super.key});
-
   @override
   _MenuState createState() => _MenuState();
 }
 
 class _MenuState extends State<Language> {
-  bool isSelectedSwitch = false;
   bool isSelectedSwitch1 = false;
+  bool isSelectedSwitch2 = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Language'),
-          backgroundColor: const Color.fromARGB(255, 14, 214, 21),
-        ),
         body: Container(
           width: 429,
-          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 85),
+          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 85),
           child: Column(
             children: [
               Text(
-                "Select your language",
-                style: Theme.of(context).textTheme.headlineMedium,
+            "Select your language",
+              style: TextStyle(
+              color: Colors.green.shade800, 
+              fontWeight: FontWeight.bold,
+              fontSize: 24, 
+               ),
               ),
-              const Spacer(flex: 48),
+              Spacer(flex: 48),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: EdgeInsets.only(left: 23, right: 9),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "Default (සිංහල)",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
@@ -46,39 +44,52 @@ class _MenuState extends State<Language> {
                           isSelectedSwitch1 = value;
                         });
                       },
+                      activeTrackColor: Color(0xFF25DA15),
+                      activeColor: Colors.white,   
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 18),
+              SizedBox(height: 18),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: EdgeInsets.only(left: 23, right: 9),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "English",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     Switch(
-                      value: isSelectedSwitch1,
+                      value: isSelectedSwitch2,
                       onChanged: (value) {
                         setState(() {
-                          isSelectedSwitch1 = value;
+                          isSelectedSwitch2 = value;
                         });
                       },
+                      activeTrackColor: Color(0xFF25DA15),
+                      activeColor: Colors.white,
                     ),
                   ],
                 ),
               ),
-              const Spacer(flex: 51),
-              const SizedBox(height: 35),
+              Spacer(flex: 51),
+              SizedBox(height: 35),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: const Text("Next"),
+                child: Text("Next",
+                style: TextStyle(color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(350, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  backgroundColor: Color(0xFF25DA15), 
+                ),
               ),
             ],
           ),
