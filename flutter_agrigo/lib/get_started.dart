@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GetStart extends StatelessWidget {
+  const GetStart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 26,
             vertical: 72,
           ),
@@ -29,57 +30,57 @@ class GetStart extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 56,
               ),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: Text("ආරම්භ කරන්න",
+                style: ElevatedButton.styleFrom(
+                minimumSize: const Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+               ),
+                child: const Text("ආරම්භ කරන්න",
                 style: TextStyle(color: Colors.black),
                 ),
-                style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 50),
-                shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                ),
-                backgroundColor: Color.fromARGB(255, 238, 232, 232),
                ),
-               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: Text("Register",
-                style: TextStyle(color: Colors.white),
-                ),
                 style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 50),
+                minimumSize: const Size(350, 50),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
-                backgroundColor: Color(0xFF25DA15),
+                backgroundColor: const Color(0xFF25DA15),
                ),
+                child: const Text("Register",
+                style: TextStyle(color: Colors.white),
+                ),
               ),
-              SizedBox(height: 32),
+              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: Text("Log in",
-                style: TextStyle(color: Colors.white),
-                ),
                 style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 50),
+                minimumSize: const Size(350, 50),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
-                backgroundColor: Color(0xFF25DA15),
+                backgroundColor: const Color(0xFF25DA15),
                ),
+                child: const Text("Log in",
+                style: TextStyle(color: Colors.white),
+                ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 43,
               ),
             ],

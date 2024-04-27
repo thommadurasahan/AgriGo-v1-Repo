@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -17,7 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 85),
+          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 85),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -29,8 +31,8 @@ class _SignUpPageState extends State<SignUpPage> {
               fontSize: 24, 
                ),
               ),
-            SizedBox(height: 18),
-            Text(
+            const SizedBox(height: 18),
+            const Text(
                  'අප වෙත අලුත් නම් ඔබගේ විද්‍යුත් ලිපිනය තහවුරු කර ලියපදිංචිය සම්පූර්ණ කිරීමට ඉදිරියට යන්න',
                   style: TextStyle(
                   fontSize: 12.0,
@@ -40,54 +42,54 @@ class _SignUpPageState extends State<SignUpPage> {
             // Enter Email
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'විද්‍යුත් ලිපිනය',
+              decoration: const InputDecoration(labelText: 'විද්‍යුත් ලිපිනය',
               labelStyle: TextStyle(fontSize: 12),
               ),
               keyboardType: TextInputType.emailAddress,
             ),
-            SizedBox(height: 18),
+            const SizedBox(height: 18),
             // Comfirm Email
             ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: Text("තහවුරු කරන්න",
-                style: TextStyle(color: Colors.white),
-                ),
                 style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 40),
+                minimumSize: const Size(350, 40),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
-                backgroundColor: Color(0xFF25DA15),
+                backgroundColor: const Color(0xFF25DA15),
                ),
+                child: const Text("තහවුරු කරන්න",
+                style: TextStyle(color: Colors.white),
+                ),
               ),
             // Enter First Name
             TextField(
               controller: _firstNameController,
-              decoration: InputDecoration(labelText: 'මුල් නම',
+              decoration: const InputDecoration(labelText: 'මුල් නම',
               labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Last Name
             TextField(
               controller: _lastNameController,
-              decoration: InputDecoration(labelText: 'අවසාන නම',
+              decoration: const InputDecoration(labelText: 'අවසාන නම',
               labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Password
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'මුරපදය',
+              decoration: const InputDecoration(labelText: 'මුරපදය',
               labelStyle: TextStyle(fontSize: 12),
               ),
               obscureText: true,
             ),
-            SizedBox(height: 18),
+            const SizedBox(height: 18),
             // Checkbox for Terms and Conditions
             CheckboxListTile(
-              title: Text('ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
+              title: const Text('ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
                       style: TextStyle(
                       fontSize: 12.0,
                       color: Colors.black,
@@ -95,7 +97,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
               value: _agreedToTerms,
               onChanged: (value) => setState(() => _agreedToTerms = value!),
-              activeColor: Color(0xFF25DA15),
+              activeColor: const Color(0xFF25DA15),
             ),
             // Sign Up Button
             ElevatedButton(
@@ -107,16 +109,16 @@ class _SignUpPageState extends State<SignUpPage> {
                   // Show error message if terms not agreed to
                 }
               },
-              child: Text('ලියාපදිංචි වන්න',
-              style: TextStyle(color: Colors.white),
-              ),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 40),
+                minimumSize: const Size(350, 40),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
-                backgroundColor: Color(0xFF25DA15),
+                backgroundColor: const Color(0xFF25DA15),
                ),
+              child: const Text('ලියාපදිංචි වන්න',
+              style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

@@ -8,7 +8,7 @@ class EnterNumber extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          width: 429,
+          width: 429, 
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 78),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -16,12 +16,15 @@ class EnterNumber extends StatelessWidget {
               const SizedBox(height: 7),
               Text(
                 "Welcome to AgriGO",
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: TextStyle(
+                color: Colors.green.shade800, 
+                fontWeight: FontWeight.bold,
+                fontSize: 24,)
               ),
               const SizedBox(height: 24),
               Container(
                 width: 351,
-                margin: const EdgeInsets.only(left: 4, right: 3),
+                margin: EdgeInsets.on.ly(left: 4, right: 3),
                 child: Text(
                   "කරුණාකර ඔබගේ ජංගම දුරකථන අංකය ඇතුලත් කරන්න",
                   maxLines: 2,
@@ -37,24 +40,43 @@ class EnterNumber extends StatelessWidget {
                   padding: EdgeInsets.only(left: 3),
                   child: Text(
                     "දුරකථන අංකය",
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(fontSize: 14, color: Colors.black),
                   ),
                 ),
               ),
-              const SizedBox(height: 33),
+              const SizedBox(height: 10),
               _buildPhoneNumberInput(context),
               const Spacer(flex: 62),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
-                },
-                child: const Text("ඊළඟ"),
+                }
+
+
+                
+                style: ElevatedButton.styleFrom(
+                minimumSize: const Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: const Color(0xFF25DA15),
+               ),child:    
+               const Text("ඊළඟ",
+                style: TextStyle(color: Colors.white),
+                ),
               ),
               const SizedBox(height: 14),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
+                style: ElevatedButton.styleFrom(
+                minimumSize: const Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: Colors.white,
+               ),
                 child: const Text("මඟ හරින්න"),
               ),
             ],
@@ -71,7 +93,7 @@ class EnterNumber extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            "assets/User.png",
+            "assets/Flag.png",
             height: 40,
             width: 40,
             fit: BoxFit.cover,
