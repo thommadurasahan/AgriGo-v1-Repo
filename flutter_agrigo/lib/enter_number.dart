@@ -7,10 +7,6 @@ class EnterNumber extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Number'),
-          backgroundColor: const Color.fromARGB(255, 14, 214, 21),
-        ),
         body: Container(
           width: 429,
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 78),
