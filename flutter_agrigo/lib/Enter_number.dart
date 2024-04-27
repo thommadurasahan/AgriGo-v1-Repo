@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class EnterNumber extends StatelessWidget {
+  const EnterNumber({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Container(
           width: 429, 
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 78),
+          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 78),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 7),
+              const SizedBox(height: 7),
               Text(
                 "Welcome to AgriGO",
                 style: TextStyle(
@@ -19,20 +21,20 @@ class EnterNumber extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 24,)
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Container(
                 width: 351,
-                margin: EdgeInsets.only(left: 4, right: 3),
+                margin: EdgeInsets.on.ly(left: 4, right: 3),
                 child: Text(
                   "කරුණාකර ඔබගේ ජංගම දුරකථන අංකය ඇතුලත් කරන්න",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
-              Spacer(flex: 37),
-              Align(
+              const Spacer(flex: 37),
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: EdgeInsets.only(left: 3),
@@ -42,40 +44,40 @@ class EnterNumber extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               _buildPhoneNumberInput(context),
-              Spacer(flex: 62),
+              const Spacer(flex: 62),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 }
 
 
-                child:    
-               Text("ඊළඟ",
-                style: TextStyle(color: Colors.white),
-                ),
+                
                 style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 50),
+                minimumSize: const Size(350, 50),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
-                backgroundColor: Color(0xFF25DA15),
-               ),
+                backgroundColor: const Color(0xFF25DA15),
+               ),child:    
+               const Text("ඊළඟ",
+                style: TextStyle(color: Colors.white),
+                ),
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                child: Text("මඟ හරින්න"),
                 style: ElevatedButton.styleFrom(
-                minimumSize: Size(350, 50),
+                minimumSize: const Size(350, 50),
                 shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 ),
                 backgroundColor: Colors.white,
                ),
+                child: const Text("මඟ හරින්න"),
               ),
             ],
           ),
@@ -86,7 +88,7 @@ class EnterNumber extends StatelessWidget {
 
   Widget _buildPhoneNumberInput(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 3),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -96,9 +98,9 @@ class EnterNumber extends StatelessWidget {
             width: 40,
             fit: BoxFit.cover,
           ),
-          SizedBox(width: 10),
-          SizedBox(width: 10),
-          Container(
+          const SizedBox(width: 10),
+          const SizedBox(width: 10),
+          const SizedBox(
             width: 250,
             child: TextField(
               decoration: InputDecoration(
