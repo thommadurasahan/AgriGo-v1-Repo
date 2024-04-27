@@ -75,7 +75,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             // Sign Up Button
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 // Add functionality to sign up the user
                 if (_agreedToTerms) {
                   // If agreed to terms, process user sign up
