@@ -1,31 +1,42 @@
 import 'package:flutter/material.dart';
 
-class EnterNumber extends StatelessWidget {
-  const EnterNumber({super.key});
+class Welcome extends StatelessWidget 
+{
+  const Welcome({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
+  Widget build(BuildContext context) 
+  {
+    return SafeArea
+    (
+      child: Scaffold
+      (
+        body: Container
+        (
           width: 429, 
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 78),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+          child: Column
+          (
+            mainAxisAlignment: MainAxisAlignment.center,            
+            children: 
+            [
               const SizedBox(height: 7),
-              Text(
+              Text
+              (
                 "Welcome to AgriGO",
                 style: TextStyle(
                 color: Colors.green.shade800, 
                 fontWeight: FontWeight.bold,
                 fontSize: 24,)
               ),
+
               const SizedBox(height: 24),
-              Container(
+              Container
+              (
                 width: 351,
-                margin: EdgeInsets.on.ly(left: 4, right: 3),
-                child: Text(
+                margin: const EdgeInsets.only(left: 4, right: 3),
+                child: Text
+                (
                   "කරුණාකර ඔබගේ ජංගම දුරකථන අංකය ඇතුලත් කරන්න",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -33,30 +44,36 @@ class EnterNumber extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
+
               const Spacer(flex: 37),
-              const Align(
+              const Align
+              (
                 alignment: Alignment.centerLeft,
-                child: Padding(
+                child: Padding
+                (
                   padding: EdgeInsets.only(left: 3),
-                  child: Text(
+                  child: Text
+                  (
                     "දුරකථන අංකය",
                     style: TextStyle(fontSize: 14, color: Colors.black),
                   ),
                 ),
               ),
+
               const SizedBox(height: 10),
               _buildPhoneNumberInput(context),
               const Spacer(flex: 62),
-              ElevatedButton(
+
+              ElevatedButton
+              (
                 onPressed: () {
                   // Add your action here
-                }
+                },                
 
-
-                
                 style: ElevatedButton.styleFrom(
                 minimumSize: const Size(350, 50),
-                shape: RoundedRectangleBorder(
+                shape: RoundedRectangleBorder
+                (
                 borderRadius: BorderRadius.circular(10.0),
                 ),
                 backgroundColor: const Color(0xFF25DA15),
@@ -65,14 +82,18 @@ class EnterNumber extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
                 ),
               ),
+
               const SizedBox(height: 14),
-              ElevatedButton(
+              ElevatedButton
+              (
                 onPressed: () {
                   // Add your action here
                 },
+
                 style: ElevatedButton.styleFrom(
                 minimumSize: const Size(350, 50),
-                shape: RoundedRectangleBorder(
+                shape: RoundedRectangleBorder
+                (
                 borderRadius: BorderRadius.circular(10.0),
                 ),
                 backgroundColor: Colors.white,
@@ -86,12 +107,17 @@ class EnterNumber extends StatelessWidget {
     );
   }
 
-  Widget _buildPhoneNumberInput(BuildContext context) {
-    return Padding(
+  Widget _buildPhoneNumberInput(BuildContext context) 
+  {
+    return Padding
+    (
       padding: const EdgeInsets.symmetric(horizontal: 3),
-      child: Row(
+      child: Row
+      (
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+
+        children: 
+        [
           Image.asset(
             "assets/Flag.png",
             height: 40,
@@ -100,10 +126,13 @@ class EnterNumber extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           const SizedBox(width: 10),
-          const SizedBox(
+          const SizedBox
+          (
             width: 250,
-            child: TextField(
-              decoration: InputDecoration(
+            child: TextField
+            (
+              decoration: InputDecoration
+              (
                 hintText: "Enter phone number",
               ),
             ),
