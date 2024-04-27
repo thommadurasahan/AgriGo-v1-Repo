@@ -87,19 +87,16 @@ Padding(
           ),
         const SizedBox(height: 21),
 const SizedBox(height: 21),
-Container(
-
-  child: ElevatedButton(
-    onPressed: () {}, // Add onPressed logic as needed
-    style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.green, // Make the button transparent to show container's background color
-    ),
-    child: Container(
-      alignment: Alignment.center,
-      child: const Text(
-        "නිවැරැදියි",
-        style: TextStyle(color: Colors.white), // Set text color to white
-      ),
+ElevatedButton(
+  onPressed: () {}, // Add onPressed logic as needed
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.green, // Make the button transparent to show container's background color
+  ),
+  child: Container(
+    alignment: Alignment.center,
+    child: const Text(
+      "නිවැරැදියි",
+      style: TextStyle(color: Colors.white), // Set text color to white
     ),
   ),
 ),

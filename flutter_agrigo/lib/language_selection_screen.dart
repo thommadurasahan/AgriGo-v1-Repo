@@ -7,7 +7,7 @@ class LanguageSelection extends StatefulWidget {
   _MenuState createState() => _MenuState();
 }
 
-class _MenuState extends State<Language> {
+class _MenuState extends State<LanguageSelection> {
   bool isSelectedSwitch1 = false;
   bool isSelectedSwitch2 = false;
 
