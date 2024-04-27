@@ -1,42 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class GetStart extends StatelessWidget {
-  const GetStart({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('GetStart'),
-          backgroundColor: const Color.fromARGB(255, 14, 214, 21),
-        ),
         body: Container(
           width: double.maxFinite,
-          padding: const EdgeInsets.symmetric(
+          padding: EdgeInsets.symmetric(
             horizontal: 26,
-            vertical: 62,
+            vertical: 72,
           ),
           child: Column(
             children: [
               SizedBox(
-                height: 327,
-                width: 296,
+                height: 250,
+                width: 250,
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
-                    const Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        "Category",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
                     Image.asset(
-                      "assets/User.png",
+                      "assets/Userget.png",
                       height: 296,
                       width: 296,
                       alignment: Alignment.topCenter,
@@ -44,31 +29,57 @@ class GetStart extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(
+              Spacer(
                 flex: 56,
               ),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 14, 214, 21),
-                  minimumSize: const Size(double.infinity, 57),
+                child: Text("ආරම්භ කරන්න",
+                style: TextStyle(color: Colors.black),
                 ),
-                child: const Text("ආරම්භ කරන්න"),
-              ),
-              const SizedBox(height: 32),
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: Color.fromARGB(255, 238, 232, 232),
+               ),
+               ),
+              SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey,
-                  minimumSize: const Size(double.infinity, 57),
+                child: Text("Register",
+                style: TextStyle(color: Colors.white),
                 ),
-                child: const Text("Login"),
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: Color(0xFF25DA15),
+               ),
               ),
-              const Spacer(
+              SizedBox(height: 32),
+              ElevatedButton(
+                onPressed: () {
+                  // Add your action here
+                },
+                child: Text("Log in",
+                style: TextStyle(color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                minimumSize: Size(350, 50),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                ),
+                backgroundColor: Color(0xFF25DA15),
+               ),
+              ),
+              Spacer(
                 flex: 43,
               ),
             ],
