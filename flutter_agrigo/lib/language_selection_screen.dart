@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Language extends StatefulWidget {
-  const Language({super.key});
+class LanguageSelection extends StatefulWidget {
+  const LanguageSelection({super.key});
 
   @override
   _MenuState createState() => _MenuState();
