@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//About to delete this file
+
 class EnterNumber extends StatelessWidget {
   const EnterNumber({super.key});
 
