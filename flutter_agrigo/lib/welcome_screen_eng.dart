@@ -39,7 +39,7 @@ class Welcome extends StatelessWidget
                 margin: const EdgeInsets.only(left: 4, right: 3),
                 child: Text
                 (
-                  "කරුණාකර ඔබගේ ජංගම දුරකථන අංකය ඇතුලත් කරන්න",
+                  "Please enter your mobile number",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
@@ -81,13 +81,13 @@ class Welcome extends StatelessWidget
                 ),
                 backgroundColor: const Color(0xFF25DA15),
                ),child:    
-               const Text("ඊළඟ",
+               const Text("NEXT",
                 style: TextStyle(color: Colors.white),
                 ),
               ),
 
               const SizedBox(height: 14),
-
+              
               ElevatedButton
               (
                 onPressed: () {
@@ -102,7 +102,7 @@ class Welcome extends StatelessWidget
                 ),
                 backgroundColor: Colors.white,
                ),
-                child: const Text("මඟ හරින්න"),
+                child: const Text("SKIP"),
               ),
             ],
           ),
