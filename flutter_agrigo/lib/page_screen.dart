@@ -1,372 +1,133 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-class PageScreen extends StatelessWidget {
-  const PageScreen({super.key});
+class PageScreen extends StatefulWidget {
+  @override
+  _PageScreenState createState() => _PageScreenState();
+}
+
+class _PageScreenState extends State<PageScreen> {
+  int _currentImageIndex = 0;
+  final List<String> _imagePaths = [
+    'assets/Carrot2.jpeg',
+    'assets/Slider2.png',
+  ];
+
+  Widget _buildImage(String imagePath) {
+    return Container(
+      child: Image.asset(imagePath, fit: BoxFit.cover),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: SizedBox(
-          width: double.maxFinite,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                _buildThree(context),
-                const SizedBox(height: 3),
-                SizedBox(
-                  height: 557,
-                  width: double.maxFinite,
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          color: Colors.blueGrey, // Change to desired color
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              _buildForty(context),
-                              const SizedBox(height: 10),
-                              _buildSeven(context),
-                              const SizedBox(height: 13),
-                              _buildFive(context),
-                              const SizedBox(height: 86),
-                            ],
-                          ),
-                        ),
-                      ),
-                      _buildOne(context),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AgriGO'),
+        actions: [
+          IconButton(
+            icon: Image.asset('assets/Compass.png'),
+            onPressed: () {
+              // Handle first icon press action
+            },
           ),
-        ),
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildThree(BuildContext context) {
-    return Container(
-      color: Colors.lightGreenAccent, // Change to desired color
-      child: Column(
-        children: [
-          const SizedBox(height: 19),
-          const Padding(
-            padding: EdgeInsets.only(
-              left: 8,
-              right: 14,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 18),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "ඔබ සොයන්නේ කුමක් ද ?",
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 14),
-          SizedBox(
-            height: 293,
-            width: double.maxFinite,
-            child: Stack(
-              alignment: Alignment.bottomLeft,
-              children: [
-                Container(
-                  color: Colors.white, // Change to desired color
-                  height: 293,
-                  alignment: Alignment.center,
-                ),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 10,
-                    margin: const EdgeInsets.only(
-                      left: 161,
-                      bottom: 21,
-                    ),
-                    child: const SizedBox(
-                      width: 100,
-                      child: Placeholder(), // Placeholder for AnimatedSmoothIndicator
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          IconButton(
+            icon: Image.asset('assets/Switch.png'),
+            onPressed: () {
+              // Handle second icon press action
+            },
           ),
         ],
+        backgroundColor: Color(0xFF25DA15),
       ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildForty(BuildContext context) {
-    return SizedBox(
-      height: 118,
-      width: double.maxFinite,
-      child: Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 7,
-                vertical: 4,
-              ),
-              color: Colors.white, // Change to desired color
-              child: const Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  SizedBox(height: 71),
-                  Text(
-                    "රු 950.00/1kg",
-                    style: TextStyle(fontSize: 16), // Adjust the style as needed
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Container(
-              width: 319,
-              margin: const EdgeInsets.only(left: 8),
-              child: const Text(
-                "නුවරඑළියේ හොඳම කැරට්    අඩුම මිලට...",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 16), // Adjust the style as needed
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildSeven(BuildContext context) {
-    return Container(
-      height: 126,
-      width: double.maxFinite,
-      color: Colors.white, // Change to desired color
-      child: Stack(
-        alignment: Alignment.bottomRight,
-        children: [
-          Container(
-            height: 107,
-            width: 107,
-            color: Colors.white, // Change to desired color
-            alignment: Alignment.topLeft,
-          ),
-          const Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 19),
-              child: SizedBox(
-                width: 330,
-                child: Divider(
-                  endIndent: 52,
-                ),
-              ),
-            ),
-          ),
-          Container(
-            height: 65,
-            width: 65,
-            color: Colors.white, // Change to desired color
-            alignment: Alignment.topRight,
-            margin: const EdgeInsets.only(
-              top: 21,
-              right: 3,
-            ),
-          ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 124,
-                top: 27,
-                right: 67,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 32,
-                    width: 237,
-                    margin: const EdgeInsets.only(left: 1),
-                    child: const Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Text(
-                          "Senarathna & Sons",
-                          style: TextStyle(fontSize: 16), // Adjust the style as needed
-                        ),
-                        Text(
-                          "Senarathna & Sons",
-                          style: TextStyle(fontSize: 16), // Adjust the style as needed
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 1),
-                  const Text(
-                    "Dambulla, SriLanka",
-                    style: TextStyle(fontSize: 16), // Adjust the style as needed
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildFive(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 9,
-        vertical: 17,
-      ),
-      color: Colors.white, // Change to desired color
-      child: Column(
-        children: [
-          const SizedBox(height: 36),
-          Container(
-            width: 406,
-            margin: const EdgeInsets.only(right: 5),
-            child: const Text(
-              "දුරකතන අංකය : 0765695214\n\nලිපිනය          : 45/B, අනුරාධපුර පාර,\r\n                  කැකිරාව\n\nඅප ගැන        : ඔබට අවශ්‍ය සියලුම එළවලු තොග සහ\n                  සිල්ලර මිලට අප වෙතින් ලබා ගත හැක.",
-              maxLines: 7,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 16), // Adjust the style as needed
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildOne(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: Container(
-        height: 78,
-        width: 429,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-          vertical: 6,
-        ),
-        child: Stack(
-          alignment: Alignment.topLeft,
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      top: 36,
-                      bottom: 1,
-                    ),
-                    child: Text(
-                      "Home",
-                      style: TextStyle(fontSize: 16), // Adjust the style as needed
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 44),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 32,
-                          width: 39,
-                          color: Colors.white, // Change to desired color
-                        ),
-                        const SizedBox(height: 6),
-                        const Text(
-                          "Categories",
-                          style: TextStyle(fontSize: 16), // Adjust the style as needed
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 30,
-                      top: 3,
-                      bottom: 1,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 29,
-                          width: 29,
-                          margin: const EdgeInsets.only(left: 27),
-                          color: Colors.white, // Change to desired color
-                        ),
-                        const SizedBox(height: 4),
-                        const Text(
-                          "Notifications",
-                          style: TextStyle(fontSize: 16), // Adjust the style as needed
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 37,
-                      top: 10,
-                      bottom: 1,
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 25,
-                          width: 25,
-                          color: Colors.white, // Change to desired color
-                        ),
-                        const SizedBox(height: 1),
-                        const Text(
-                          "Menu",
-                          style: TextStyle(fontSize: 16), // Adjust the style as needed
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+            CarouselSlider(
+              items: _imagePaths.map((imagePath) => _buildImage(imagePath)).toList(),
+              options: CarouselOptions(
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 5),
+                aspectRatio: 17 / 8,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentImageIndex = index;
+                  });
+                },
               ),
             ),
-            Container(
-              height: 34,
-              width: 34,
-              color: Colors.white, // Change to desired color
-              alignment: Alignment.topLeft,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: _imagePaths.asMap().entries.map((entry) {
+                return Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: Container(
+                    width: 8.0,
+                    height: 8.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _currentImageIndex == entry.key ? Colors.white : Colors.grey[400],
+                    ),
+                  ),
+                );
+              }).toList(),
             ),
+            Divider( // Add the horizontal line
+              thickness: 4.0, // Adjust thickness as needed
+              color: Colors.grey // Adjust color as needed
+            ),
+            SizedBox(width: 1.0), // Add spacing between profile picture and name
+                Text(
+                  'නුවරඑළියේ හොඳම කැරට් අපෙන් අඩුම මිලට...     \n රු 950.00/1kg', // Replace with your profile name
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
+                Divider( // Add the horizontal line
+              thickness: 4.0, // Adjust thickness as needed
+              color: Colors.grey, // Adjust color as needed
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              children: [
+                // Add profile picture
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: AssetImage('assets/User.png'), // Replace with your asset path
+                ),
+                SizedBox(width: 1.0), // Add spacing between profile picture and name
+                Text(
+                  '      Senarathna & Sons \n      Dambulla, SriLanka ', // Replace with your profile name
+                  style: TextStyle(fontSize: 16.0),
+                ),
+              ],
+            ),
+            Divider( // Add the horizontal line
+              thickness: 4.0, // Adjust thickness as needed
+              color: Colors.grey, // Adjust color as needed
+            ),
+            Text(
+                  'දුරකතන අංකය : 0765695214                                            ', // Replace with your profile name
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 16.0,),
+                ),
+            Divider( // Add the horizontal line
+              thickness: 1.0, // Adjust thickness as needed
+              color: Colors.white, // Adjust color as needed
+            ),
+            Text(
+                  'ලිපිනය                  : 45/B, අනුරාධපුර පාර,කැකිරාව                 ', // Replace with your profile name
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 16.0, ),
+                ),
+              Divider( // Add the horizontal line
+              thickness: 1.0, // Adjust thickness as needed
+              color: Colors.white, // Adjust color as needed
+            ),
+              Text(
+                  'අප ගැන                : ඔබට අවශ්‍ය සියලුම එළවලු තොග  \n                                  සහ සිල්ලර මිලට අප වෙතින් ලබා \n                                  ගත හැක.', // Replace with your profile name
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 16.0,),
+                ),
           ],
         ),
       ),
