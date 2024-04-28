@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LodingScreen extends StatelessWidget 
+class Loading extends StatelessWidget 
 {
-  const LodingScreen({super.key});
+  const Loading({super.key});
 
   @override
   Widget build(BuildContext context) 
