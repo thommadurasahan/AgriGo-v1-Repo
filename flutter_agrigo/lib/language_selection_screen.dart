@@ -12,7 +12,8 @@ class _MenuState extends State<LanguageSelection> {
   bool isSelectedSwitch2 = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -21,14 +22,16 @@ class _MenuState extends State<LanguageSelection> {
           child: Column(
             children: [
               Text(
-            "Select your language",
-              style: TextStyle(
-              color: Colors.green.shade800, 
-              fontWeight: FontWeight.bold,
-              fontSize: 24, 
-               ),
+                "Select your language",
+                style: TextStyle(
+                  color: Colors.green.shade800, 
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24, 
+                ),
               ),
+              
               const Spacer(flex: 48),
+
               Padding(
                 padding: const EdgeInsets.only(left: 23, right: 9),
                 child: Row(
@@ -52,7 +55,9 @@ class _MenuState extends State<LanguageSelection> {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
               Padding(
                 padding: const EdgeInsets.only(left: 23, right: 9),
                 child: Row(
@@ -78,10 +83,12 @@ class _MenuState extends State<LanguageSelection> {
               ),
               const Spacer(flex: 51),
               const SizedBox(height: 35),
+              
               ElevatedButton(
                 onPressed: () {
                   // Add your action here
                 },
+
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
                   shape: RoundedRectangleBorder(
@@ -89,6 +96,7 @@ class _MenuState extends State<LanguageSelection> {
                   ),
                   backgroundColor: const Color(0xFF25DA15), 
                 ),
+
                 child: const Text("Next",
                 style: TextStyle(color: Colors.white),
                 ),
