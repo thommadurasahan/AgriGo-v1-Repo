@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 
-class ConfirmEmail extends StatelessWidget 
-{
+class ConfirmEmail extends StatelessWidget {
   const ConfirmEmail({super.key});
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     Theme.of(context);
 
-    return SafeArea
-    (
-      child: Scaffold
-      (
-        body: DecoratedBox
-        (
-          decoration: BoxDecoration
-          (
+    return SafeArea(
+      child: Scaffold(
+        body: DecoratedBox(
+          decoration: BoxDecoration(
             color: Colors.grey[200], // Ash color background
           ),
-          child: SizedBox
-          (
+          child: SizedBox(
             width: 429,
-            child: Column
-            (
-              children: 
-              [
+            child: Column(
+              children: [
                 const SizedBox(height: 247),
-                Expanded
-                (
-                  child: SingleChildScrollView
-                  (
+                Expanded(
+                  child: SingleChildScrollView(
                     child: _buildFour(context),
                   ),
                 ),
@@ -42,43 +31,34 @@ class ConfirmEmail extends StatelessWidget
     );
   }
 
-  Widget _buildFour(BuildContext context) 
-  {
+  Widget _buildFour(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Container
-    (
-      margin: const EdgeInsets.only
-      (
+    return Container(
+      margin: const EdgeInsets.only(
         left: 11,
         right: 11,
         bottom: 220,
       ),
-      padding: const EdgeInsets.symmetric
-      (
+      padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 21,
       ),
-      child: Column
-      (
+      child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: 
-        [
+        children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: Padding
-            (
+            child: Padding(
               padding: const EdgeInsets.only(left: 37),
-              child: Text
-              (
+              child: Text(
                 "විද්‍යුත් ලිපිනය තහවුරු කිරීම",
                 style: theme.textTheme.titleLarge, // Changed to headline6
               ),
             ),
           ),
           const SizedBox(height: 39),
-          SizedBox
-          (
+          SizedBox(
             width: 381,
             child: Text(
               "කරුණාකර ඔබේ විද්යුත් ලිපිනයට එවන ලද OTP අංකය ඇතුළත් කරන්න",
@@ -89,23 +69,19 @@ class ConfirmEmail extends StatelessWidget
             ),
           ),
           const SizedBox(height: 53),
-          const Divider
-          (
+          const Divider(
             indent: 22,
             endIndent: 20,
           ),
           const SizedBox(height: 23),
-          Text
-          (
+          Text(
             "කාලය නැවත සකස් වීම : 01:06",
             style: theme.textTheme.titleSmall,
           ),
           const SizedBox(height: 16),
-          ElevatedButton
-          (
+          ElevatedButton(
             onPressed: () {},
-            style: ElevatedButton.styleFrom
-            (
+            style: ElevatedButton.styleFrom(
               backgroundColor: Colors.lightGreen,
               textStyle: const TextStyle(fontSize: 16),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
@@ -113,14 +89,12 @@ class ConfirmEmail extends StatelessWidget
             child: const Text("තහවුරු කරන්න"),
           ),
           const SizedBox(height: 51),
-          Text
-          (
+          Text(
             "විද්යුත් ලිපිනය වෙනස් කිරීමට අවශ්‍ය ද?",
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 28),
-          Text
-          (
+          Text(
             "සංස්කරණය කරන්න",
             style: theme.textTheme.titleSmall,
           ),

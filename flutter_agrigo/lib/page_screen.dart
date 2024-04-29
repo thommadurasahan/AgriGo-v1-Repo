@@ -44,7 +44,9 @@ class _PageScreenState extends State<PageScreen> {
         child: Column(
           children: [
             CarouselSlider(
-              items: _imagePaths.map((imagePath) => _buildImage(imagePath)).toList(),
+              items: _imagePaths
+                  .map((imagePath) => _buildImage(imagePath))
+                  .toList(),
               options: CarouselOptions(
                 autoPlay: true,
                 autoPlayInterval: Duration(seconds: 5),
@@ -66,68 +68,85 @@ class _PageScreenState extends State<PageScreen> {
                     height: 8.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: _currentImageIndex == entry.key ? Colors.white : Colors.grey[400],
+                      color: _currentImageIndex == entry.key
+                          ? Colors.white
+                          : Colors.grey[400],
                     ),
                   ),
                 );
               }).toList(),
             ),
-            Divider( // Add the horizontal line
-              thickness: 4.0, // Adjust thickness as needed
-              color: Colors.grey // Adjust color as needed
-            ),
-            SizedBox(width: 1.0), // Add spacing between profile picture and name
-                Text(
-                  'නුවරඑළියේ හොඳම කැරට් අපෙන් අඩුම මිලට...     \n රු 950.00/1kg', // Replace with your profile name
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            Divider(
+                // Add the horizontal line
+                thickness: 4.0, // Adjust thickness as needed
+                color: Colors.grey // Adjust color as needed
                 ),
-                Divider( // Add the horizontal line
+            SizedBox(
+                width: 1.0), // Add spacing between profile picture and name
+            Text(
+              'නුවරඑළියේ හොඳම කැරට් අපෙන් අඩුම මිලට...     \n රු 950.00/1kg', // Replace with your profile name
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+            ),
+            Divider(
+              // Add the horizontal line
               thickness: 4.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Add profile picture
                 CircleAvatar(
                   radius: 30.0,
-                  backgroundImage: AssetImage('assets/User.png'), // Replace with your asset path
+                  backgroundImage: AssetImage(
+                      'assets/User.png'), // Replace with your asset path
                 ),
-                SizedBox(width: 1.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 1.0), // Add spacing between profile picture and name
                 Text(
                   '      Senarathna & Sons \n      Dambulla, SriLanka ', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
               ],
             ),
-            Divider( // Add the horizontal line
+            Divider(
+              // Add the horizontal line
               thickness: 4.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
             Text(
-                  'දුරකතන අංකය : 0765695214                                            ', // Replace with your profile name
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 16.0,),
-                ),
-            Divider( // Add the horizontal line
+              'දුරකතන අංකය : 0765695214                                            ', // Replace with your profile name
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            Divider(
+              // Add the horizontal line
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.white, // Adjust color as needed
             ),
             Text(
-                  'ලිපිනය                  : 45/B, අනුරාධපුර පාර,කැකිරාව                 ', // Replace with your profile name
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 16.0, ),
-                ),
-              Divider( // Add the horizontal line
+              'ලිපිනය                  : 45/B, අනුරාධපුර පාර,කැකිරාව                 ', // Replace with your profile name
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            Divider(
+              // Add the horizontal line
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.white, // Adjust color as needed
             ),
-              Text(
-                  'අප ගැන                : ඔබට අවශ්‍ය සියලුම එළවලු තොග  \n                                  සහ සිල්ලර මිලට අප වෙතින් ලබා \n                                  ගත හැක.', // Replace with your profile name
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 16.0,),
-                ),
+            Text(
+              'අප ගැන                : ඔබට අවශ්‍ය සියලුම එළවලු තොග  \n                                  සහ සිල්ලර මිලට අප වෙතින් ලබා \n                                  ගත හැක.', // Replace with your profile name
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
           ],
         ),
       ),

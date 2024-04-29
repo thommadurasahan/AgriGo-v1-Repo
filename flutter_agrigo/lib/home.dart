@@ -17,28 +17,26 @@ class _HomeState extends State<Home> {
   ];
 
   Widget _buildImageButton(String imagePath, double buttonSize) {
-  return ElevatedButton(
-    onPressed: () {
-      // Handle button press action (optional)
-    },
-    style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+    return ElevatedButton(
+      onPressed: () {
+        // Handle button press action (optional)
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        minimumSize: Size(buttonSize, buttonSize),
+        maximumSize: Size(buttonSize, buttonSize),
       ),
-      minimumSize: Size(buttonSize, buttonSize),
-      maximumSize: Size(buttonSize, buttonSize),
-      
-    ),
-    child: Image.asset(
-      imagePath,
-      width: buttonSize,
-      height: buttonSize,
-      fit: BoxFit.cover,
-    ),
-  );
-}
-
+      child: Image.asset(
+        imagePath,
+        width: buttonSize,
+        height: buttonSize,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +60,8 @@ class _HomeState extends State<Home> {
         ],
         backgroundColor: agriGoGreen,
       ),
-      body: SingleChildScrollView( // Wrap the content with SingleChildScrollView
+      body: SingleChildScrollView(
+        // Wrap the content with SingleChildScrollView
         child: Column(
           children: [
             Padding(
@@ -82,7 +81,9 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             CarouselSlider(
-              items: _imagePaths.map((imagePath) => _buildImage(imagePath)).toList(),
+              items: _imagePaths
+                  .map((imagePath) => _buildImage(imagePath))
+                  .toList(),
               options: CarouselOptions(
                 autoPlay: true,
                 autoPlayInterval: Duration(seconds: 5),
@@ -104,7 +105,9 @@ class _HomeState extends State<Home> {
                     height: 8.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: _currentImageIndex == entry.key ? Colors.white : Colors.grey[400],
+                      color: _currentImageIndex == entry.key
+                          ? Colors.white
+                          : Colors.grey[400],
                     ),
                   ),
                 );
@@ -120,13 +123,15 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             Container(
-              width: 370.0, 
+              width: 370.0,
               height: 160.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0), // Adjust corner radius
+                borderRadius:
+                    BorderRadius.circular(10.0), // Adjust corner radius
               ),
-              child: Stack( // To position the "Pins" on top of the box
+              child: Stack(
+                // To position the "Pins" on top of the box
                 children: [
                   // Your "Pins" widget goes here
                 ],
@@ -142,14 +147,15 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
-            children: [
-              _buildImageButton('assets/Vegitable.png', 110), 
-              _buildImageButton('assets/Fruit.png', 110), 
-              _buildImageButton('assets/Fish.png', 110), 
-            ],
-          ),
-          SizedBox(height: 50),
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
+              children: [
+                _buildImageButton('assets/Vegitable.png', 110),
+                _buildImageButton('assets/Fruit.png', 110),
+                _buildImageButton('assets/Fish.png', 110),
+              ],
+            ),
+            SizedBox(height: 50),
 
             // Your remaining content widgets go here (These will also be scrollable)
           ],
