@@ -4,6 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 const Color agriGoGreen = Color(0xFF25DA15);
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -43,7 +45,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: agriGoGreen,
       appBar: AppBar(
-        title: Text('AgriGO'),
+        title: const Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),

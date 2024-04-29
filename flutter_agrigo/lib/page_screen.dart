@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class PageScreen extends StatefulWidget {
+  const PageScreen({super.key});
+
   @override
   _PageScreenState createState() => _PageScreenState();
 }
@@ -14,16 +16,14 @@ class _PageScreenState extends State<PageScreen> {
   ];
 
   Widget _buildImage(String imagePath) {
-    return Container(
-      child: Image.asset(imagePath, fit: BoxFit.cover),
-    );
+    return Image.asset(imagePath, fit: BoxFit.cover);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AgriGO'),
+        title: const Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),
@@ -38,7 +38,7 @@ class _PageScreenState extends State<PageScreen> {
             },
           ),
         ],
-        backgroundColor: Color(0xFF25DA15),
+        backgroundColor: const Color(0xFF25DA15),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -49,7 +49,7 @@ class _PageScreenState extends State<PageScreen> {
                   .toList(),
               options: CarouselOptions(
                 autoPlay: true,
-                autoPlayInterval: Duration(seconds: 5),
+                autoPlayInterval: const Duration(seconds: 5),
                 aspectRatio: 17 / 8,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -62,7 +62,7 @@ class _PageScreenState extends State<PageScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: _imagePaths.asMap().entries.map((entry) {
                 return Padding(
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Container(
                     width: 8.0,
                     height: 8.0,
@@ -76,24 +76,24 @@ class _PageScreenState extends State<PageScreen> {
                 );
               }).toList(),
             ),
-            Divider(
+            const Divider(
                 // Add the horizontal line
                 thickness: 4.0, // Adjust thickness as needed
                 color: Colors.grey // Adjust color as needed
                 ),
-            SizedBox(
+            const SizedBox(
                 width: 1.0), // Add spacing between profile picture and name
-            Text(
+            const Text(
               'නුවරඑළියේ හොඳම කැරට් අපෙන් අඩුම මිලට...     \n රු 950.00/1kg', // Replace with your profile name
               textAlign: TextAlign.left,
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             ),
-            Divider(
+            const Divider(
               // Add the horizontal line
               thickness: 4.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
-            Row(
+            const Row(
               mainAxisAlignment:
                   MainAxisAlignment.start, // Align profile on right
               children: [
@@ -111,36 +111,36 @@ class _PageScreenState extends State<PageScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               // Add the horizontal line
               thickness: 4.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
-            Text(
+            const Text(
               'දුරකතන අංකය : 0765695214                                            ', // Replace with your profile name
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 16.0,
               ),
             ),
-            Divider(
+            const Divider(
               // Add the horizontal line
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.white, // Adjust color as needed
             ),
-            Text(
+            const Text(
               'ලිපිනය                  : 45/B, අනුරාධපුර පාර,කැකිරාව                 ', // Replace with your profile name
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 16.0,
               ),
             ),
-            Divider(
+            const Divider(
               // Add the horizontal line
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.white, // Adjust color as needed
             ),
-            Text(
+            const Text(
               'අප ගැන                : ඔබට අවශ්‍ය සියලුම එළවලු තොග  \n                                  සහ සිල්ලර මිලට අප වෙතින් ලබා \n                                  ගත හැක.', // Replace with your profile name
               textAlign: TextAlign.left,
               style: TextStyle(
