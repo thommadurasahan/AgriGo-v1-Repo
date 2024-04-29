@@ -4,8 +4,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 const Color agriGoGreen = Color(0xFF25DA15);
 
 class Home extends StatefulWidget {
-  const Home({super.key});
-
   @override
   _HomeState createState() => _HomeState();
 }
@@ -19,33 +17,35 @@ class _HomeState extends State<Home> {
   ];
 
   Widget _buildImageButton(String imagePath, double buttonSize) {
-    return ElevatedButton(
-      onPressed: () {
-        // Handle button press action (optional)
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        minimumSize: Size(buttonSize, buttonSize),
-        maximumSize: Size(buttonSize, buttonSize),
+  return ElevatedButton(
+    onPressed: () {
+      // Handle button press action (optional)
+    },
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
       ),
-      child: Image.asset(
-        imagePath,
-        width: buttonSize,
-        height: buttonSize,
-        fit: BoxFit.cover,
-      ),
-    );
-  }
+      minimumSize: Size(buttonSize, buttonSize),
+      maximumSize: Size(buttonSize, buttonSize),
+      
+    ),
+    child: Image.asset(
+      imagePath,
+      width: buttonSize,
+      height: buttonSize,
+      fit: BoxFit.cover,
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: agriGoGreen,
       appBar: AppBar(
-        title: const Text('AgriGO'),
+        title: Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),
@@ -62,8 +62,7 @@ class _HomeState extends State<Home> {
         ],
         backgroundColor: agriGoGreen,
       ),
-      body: SingleChildScrollView(
-        // Wrap the content with SingleChildScrollView
+      body: SingleChildScrollView( // Wrap the content with SingleChildScrollView
         child: Column(
           children: [
             Padding(
@@ -83,9 +82,7 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             CarouselSlider(
-              items: _imagePaths
-                  .map((imagePath) => _buildImage(imagePath))
-                  .toList(),
+              items: _imagePaths.map((imagePath) => _buildImage(imagePath)).toList(),
               options: CarouselOptions(
                 autoPlay: true,
                 autoPlayInterval: Duration(seconds: 5),
@@ -107,9 +104,7 @@ class _HomeState extends State<Home> {
                     height: 8.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: _currentImageIndex == entry.key
-                          ? Colors.white
-                          : Colors.grey[400],
+                      color: _currentImageIndex == entry.key ? Colors.white : Colors.grey[400],
                     ),
                   ),
                 );
@@ -125,15 +120,13 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             Container(
-              width: 370.0,
+              width: 370.0, 
               height: 160.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius:
-                    BorderRadius.circular(10.0), // Adjust corner radius
+                borderRadius: BorderRadius.circular(10.0), // Adjust corner radius
               ),
-              child: Stack(
-                // To position the "Pins" on top of the box
+              child: Stack( // To position the "Pins" on top of the box
                 children: [
                   // Your "Pins" widget goes here
                 ],
@@ -149,15 +142,29 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 16),
             Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
-              children: [
-                _buildImageButton('assets/Vegitable.png', 110),
-                _buildImageButton('assets/Fruit.png', 110),
-                _buildImageButton('assets/Fish.png', 110),
-              ],
-            ),
-            SizedBox(height: 50),
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
+            children: [
+              ImageButton(
+                    imagePath: 'assets/Vegitable.png',
+                    onPressed: () {
+                      // Handle button press action
+                    },
+                  ),
+              ImageButton(
+                    imagePath: 'assets/Fruit.png',
+                    onPressed: () {
+                      // Handle button press action
+                    },
+                  ),
+              ImageButton(
+                    imagePath: 'assets/Fish.png',
+                    onPressed: () {
+                      // Handle button press action
+                    },
+                  ),
+            ],
+          ),
+          SizedBox(height: 50),
 
             // Your remaining content widgets go here (These will also be scrollable)
           ],
@@ -175,6 +182,31 @@ class _HomeState extends State<Home> {
       child: Image.asset(
         imagePath,
         fit: BoxFit.cover, // Ensure image covers the container
+      ),
+    );
+  }
+}
+
+class ImageButton extends StatelessWidget {
+  final String imagePath;
+  final VoidCallback onPressed;
+
+  const ImageButton({required this.imagePath, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell( // Use InkWell for tap detection
+      onTap: onPressed,
+      child: Container(
+        width: 110,
+        height: 110,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(imagePath), // Load image from assets
+            fit: BoxFit.cover, // Adjust image fit as needed
+          ),
+          borderRadius: BorderRadius.circular(5),
+        ),
       ),
     );
   }
