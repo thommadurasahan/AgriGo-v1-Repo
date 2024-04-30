@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: SingleChildScrollView( // Wrap Column with SingleChildScrollView
+        body: SingleChildScrollView(
+          // Wrap Column with SingleChildScrollView
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 24),
-                CircleAvatar(
+                const SizedBox(height: 24),
+                const CircleAvatar(
                   radius: 80.0,
                   backgroundImage: AssetImage('assets/Userget.png'),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
 
                 // User text (replace with actual user data)
-                Text(
+                const Text(
                   'User',
                   style: TextStyle(fontSize: 18.0),
                 ),
 
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
@@ -32,7 +35,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     obscureText: true,
@@ -41,7 +44,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
@@ -52,13 +55,15 @@ class LoginPage extends StatelessWidget {
                 Container(
                   width: 180,
                   height: 55,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('ලොග් වන්න',
-                      style: TextStyle(color: Colors.white),),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF25DA15),
+                      backgroundColor: const Color(0xFF25DA15),
+                    ),
+                    child: const Text(
+                      'ලොග් වන්න',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
