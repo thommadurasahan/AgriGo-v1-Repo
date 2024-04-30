@@ -4,6 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 const Color agriGoGreen = Color(0xFF25DA15);
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -16,36 +18,12 @@ class _HomeState extends State<Home> {
     'assets/Slider4.png',
   ];
 
-  Widget _buildImageButton(String imagePath, double buttonSize) {
-  return ElevatedButton(
-    onPressed: () {
-      // Handle button press action (optional)
-    },
-    style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      minimumSize: Size(buttonSize, buttonSize),
-      maximumSize: Size(buttonSize, buttonSize),
-      
-    ),
-    child: Image.asset(
-      imagePath,
-      width: buttonSize,
-      height: buttonSize,
-      fit: BoxFit.cover,
-    ),
-  );
-}
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: agriGoGreen,
       appBar: AppBar(
-        title: Text('AgriGO'),
+        title: const Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),
@@ -62,7 +40,8 @@ class _HomeState extends State<Home> {
         ],
         backgroundColor: agriGoGreen,
       ),
-      body: SingleChildScrollView( // Wrap the content with SingleChildScrollView
+      body: SingleChildScrollView(
+        // Wrap the content with SingleChildScrollView
         child: Column(
           children: [
             Padding(
@@ -71,21 +50,23 @@ class _HomeState extends State<Home> {
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   hintText: 'Search',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 8.0),
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             CarouselSlider(
-              items: _imagePaths.map((imagePath) => _buildImage(imagePath)).toList(),
+              items: _imagePaths
+                  .map((imagePath) => _buildImage(imagePath))
+                  .toList(),
               options: CarouselOptions(
                 autoPlay: true,
-                autoPlayInterval: Duration(seconds: 5),
+                autoPlayInterval: const Duration(seconds: 5),
                 aspectRatio: 17 / 8,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -98,73 +79,78 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: _imagePaths.asMap().entries.map((entry) {
                 return Padding(
-                  padding: EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Container(
                     width: 8.0,
                     height: 8.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: _currentImageIndex == entry.key ? Colors.white : Colors.grey[400],
+                      color: _currentImageIndex == entry.key
+                          ? Colors.white
+                          : Colors.grey[400],
                     ),
                   ),
                 );
               }).toList(),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "Pinned Items",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
-              width: 370.0, 
+              width: 370.0,
               height: 160.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0), // Adjust corner radius
+                borderRadius:
+                    BorderRadius.circular(10.0), // Adjust corner radius
               ),
-              child: Stack( // To position the "Pins" on top of the box
+              child: const Stack(
+                // To position the "Pins" on top of the box
                 children: [
                   // Your "Pins" widget goes here
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "Categories",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
-            children: [
-              ImageButton(
-                    imagePath: 'assets/Vegitable.png',
-                    onPressed: () {
-                      // Handle button press action
-                    },
-                  ),
-              ImageButton(
-                    imagePath: 'assets/Fruit.png',
-                    onPressed: () {
-                      // Handle button press action
-                    },
-                  ),
-              ImageButton(
-                    imagePath: 'assets/Fish.png',
-                    onPressed: () {
-                      // Handle button press action
-                    },
-                  ),
-            ],
-          ),
-          SizedBox(height: 50),
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
+              children: [
+                ImageButton(
+                  imagePath: 'assets/Vegitable.png',
+                  onPressed: () {
+                    // Handle button press action
+                  },
+                ),
+                ImageButton(
+                  imagePath: 'assets/Fruit.png',
+                  onPressed: () {
+                    // Handle button press action
+                  },
+                ),
+                ImageButton(
+                  imagePath: 'assets/Fish.png',
+                  onPressed: () {
+                    // Handle button press action
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 50),
 
             // Your remaining content widgets go here (These will also be scrollable)
           ],
@@ -191,11 +177,13 @@ class ImageButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  const ImageButton({required this.imagePath, required this.onPressed});
+  const ImageButton(
+      {super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell( // Use InkWell for tap detection
+    return InkWell(
+      // Use InkWell for tap detection
       onTap: onPressed,
       child: Container(
         width: 110,
