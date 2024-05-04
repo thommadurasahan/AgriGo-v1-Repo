@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ImportsScreen extends StatefulWidget {
+  const ImportsScreen({super.key});
+
   @override
   _ImportsScreenState createState() => _ImportsScreenState();
 }
@@ -10,7 +12,7 @@ class _ImportsScreenState extends State<ImportsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AgriGO'),
+        title: const Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),
@@ -25,9 +27,9 @@ class _ImportsScreenState extends State<ImportsScreen> {
             },
           ),
         ],
-        backgroundColor: Color(0xFF25DA15),
+        backgroundColor: const Color(0xFF25DA15),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             // Center the "All Imports" text
