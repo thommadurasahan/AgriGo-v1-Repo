@@ -33,12 +33,12 @@ class _MenuPageState extends State<MenuPage> {
               Expanded(
                 child: ListView(
                   children: [
-                    _buildMenuItem(context, "Your Profile"),
+                    _buildMenuItem(context, "Your Profile "),
                     const Divider(
                       thickness: 1,
                       color: Colors.black,
                     ),
-                    _buildMenuItem(context, "Library "),
+                    _buildMenuItem(context, "Library"),
                     const Divider(
                       thickness: 1,
                       color: Colors.black,
