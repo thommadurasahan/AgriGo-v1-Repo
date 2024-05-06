@@ -4,7 +4,7 @@ import 'package:flutter_agrigo/home_sin.dart';
 import 'package:flutter_agrigo/menu.dart';
 
 class Notifications extends StatefulWidget {
-  const Notifications({Key? key}) : super(key: key);
+  const Notifications({super.key});
 
   @override
   _NotificationsState createState() => _NotificationsState();
@@ -24,9 +24,9 @@ class _NotificationsState extends State<Notifications> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Notifications",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -49,21 +49,21 @@ class _NotificationsState extends State<Notifications> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // Added fixed type
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.category),
+            icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(Icons.notifications),
             label: 'Notifications',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.menu),
+            icon: Icon(Icons.menu),
             label: 'Menu',
           ),
         ],
@@ -76,13 +76,13 @@ class _NotificationsState extends State<Notifications> {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeSin()),
+                MaterialPageRoute(builder: (context) => const HomeSin()),
               );
               break;
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Categories()),
+                MaterialPageRoute(builder: (context) => const Categories()),
               );
               break;
             case 2:
@@ -92,7 +92,7 @@ class _NotificationsState extends State<Notifications> {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MenuPage()),
+                MaterialPageRoute(builder: (context) => const MenuPage()),
               );
               break;
             default:

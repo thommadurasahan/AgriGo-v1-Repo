@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_agrigo/categories.dart';
@@ -21,8 +20,8 @@ class _HomeState extends State<HomeSin> {
     'assets/Slider2.png',
     'assets/Slider4.png',
   ];
-  
-  int _selectedIndex = 2; 
+
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +45,6 @@ class _HomeState extends State<HomeSin> {
         ],
         backgroundColor: agriGoGreen,
       ),
-
-
       body: SingleChildScrollView(
         // Wrap the content with SingleChildScrollView
         child: Column(
@@ -136,82 +133,82 @@ class _HomeState extends State<HomeSin> {
             ),
             const SizedBox(height: 16),
             Padding(
-            padding: EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
-              children: [
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Vegitable.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
+              padding: EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceEvenly, // Distribute buttons evenly
+                  children: [
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Vegitable.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 14),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Fruit.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Fish.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Spices.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Export.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/Others.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                ),
-                const SizedBox(width: 14),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Fruit.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Fish.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Spices.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Export.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/Others.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-              ],
+              ),
             ),
-        ),
-        ),
             const SizedBox(height: 50),
 
             // Your remaining content widgets go here (These will also be scrollable)

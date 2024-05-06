@@ -4,12 +4,12 @@ import 'package:flutter_agrigo/menu.dart';
 import 'package:flutter_agrigo/notification.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({Key? key}) : super(key: key);
+  const Categories({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF25DA15),
+      backgroundColor: const Color(0xFF25DA15),
       appBar: AppBar(
         title: const Text('AgriGO'),
         actions: [
@@ -30,8 +30,8 @@ class Categories extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0),
             child: Text(
               "Categories",
               style: TextStyle(
@@ -98,21 +98,21 @@ class Categories extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.category),
+            icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(Icons.notifications),
             label: 'Notifications',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.menu),
+            icon: Icon(Icons.menu),
             label: 'Menu',
           ),
         ],
@@ -137,7 +137,7 @@ class Categories extends StatelessWidget {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MenuPage()),
+                MaterialPageRoute(builder: (context) => const MenuPage()),
               );
               break;
             default:
@@ -154,8 +154,8 @@ class ImageButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  const ImageButton({Key? key, required this.imagePath, required this.onPressed})
-      : super(key: key);
+  const ImageButton(
+      {super.key, required this.imagePath, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

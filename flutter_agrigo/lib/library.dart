@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Library extends StatelessWidget {
-  const Library({Key? key}) : super(key: key);
+  const Library({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,23 +9,23 @@ class Library extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-        title: const Text('Library'),
-        actions: [
-          IconButton(
-            icon: Image.asset('assets/Compass.png'),
-            onPressed: () {
-              // Handle first icon press action
-            },
-          ),
-          IconButton(
-            icon: Image.asset('assets/Switch.png'),
-            onPressed: () {
-              // Handle second icon press action
-            },
-          ),
-        ],
-        backgroundColor: Color(0xFF25DA15),
-      ),
+          title: const Text('Library'),
+          actions: [
+            IconButton(
+              icon: Image.asset('assets/Compass.png'),
+              onPressed: () {
+                // Handle first icon press action
+              },
+            ),
+            IconButton(
+              icon: Image.asset('assets/Switch.png'),
+              onPressed: () {
+                // Handle second icon press action
+              },
+            ),
+          ],
+          backgroundColor: const Color(0xFF25DA15),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -109,21 +109,21 @@ class Library extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          items: [
+          items: const [
             BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
+              icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.category),
+              icon: Icon(Icons.category),
               label: 'Categories',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.notifications),
+              icon: Icon(Icons.notifications),
               label: 'Notifications',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.menu),
+              icon: Icon(Icons.menu),
               label: 'Menu',
             ),
           ],
@@ -186,7 +186,8 @@ class Library extends StatelessWidget {
             ),
             Text(
               prices[index],
-              style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             ),
           ],
         );

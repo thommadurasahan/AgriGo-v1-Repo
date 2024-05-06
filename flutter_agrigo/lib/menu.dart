@@ -4,7 +4,7 @@ import 'package:flutter_agrigo/home_sin.dart';
 import 'package:flutter_agrigo/notification.dart';
 
 class MenuPage extends StatefulWidget {
-  const MenuPage({Key? key}) : super(key: key);
+  const MenuPage({super.key});
 
   @override
   _MenuPageState createState() => _MenuPageState();
@@ -67,21 +67,21 @@ class _MenuPageState extends State<MenuPage> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed, // Added fixed type
-          items: [
+          items: const [
             BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
+              icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.category),
+              icon: Icon(Icons.category),
               label: 'Categories',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.notifications),
+              icon: Icon(Icons.notifications),
               label: 'Notifications',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.menu),
+              icon: Icon(Icons.menu),
               label: 'Menu',
             ),
           ],
@@ -94,20 +94,20 @@ class _MenuPageState extends State<MenuPage> {
               case 0:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomeSin()),
+                  MaterialPageRoute(builder: (context) => const HomeSin()),
                 );
                 break;
               case 1:
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Categories()),
-              );
+                  context,
+                  MaterialPageRoute(builder: (context) => const Categories()),
+                );
                 break;
               case 2:
                 Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Notifications()),
-              );
+                  context,
+                  MaterialPageRoute(builder: (context) => Notifications()),
+                );
                 break;
               case 3:
                 // Handle navigation to Menu screen

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SpicesScreen extends StatefulWidget {
+  const SpicesScreen({super.key});
+
   @override
   _SpicesScreenState createState() => _SpicesScreenState();
 }
@@ -30,14 +32,15 @@ class _SpicesScreenState extends State<SpicesScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-             // Add spacing between profile picture and name
-                Text(
-                  'All Spices', // Replace with your profile name
-                  style: TextStyle(fontSize: 20.0),
-                ),
+            // Add spacing between profile picture and name
+            Text(
+              'All Spices', // Replace with your profile name
+              style: TextStyle(fontSize: 20.0),
+            ),
             SizedBox(width: 1.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Replace CircleAvatar with Image
                 Image.asset(
@@ -45,7 +48,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(width: 5.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 5.0), // Add spacing between profile picture and name
                 Text(
                   'මිරිස් කුඩු\nරු 2400.00/1kg\nNadun Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
@@ -63,7 +67,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
               color: Colors.grey, // Adjust color as needed
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Replace CircleAvatar with Image
                 Image.asset(
@@ -71,7 +76,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(width: 5.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 5.0), // Add spacing between profile picture and name
                 Text(
                   'කහ කුඩු\nරු 3100.00/1kg\nBest Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
@@ -89,7 +95,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
               color: Colors.grey, // Adjust color as needed
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Replace CircleAvatar with Image
                 Image.asset(
@@ -97,7 +104,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(width: 5.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 5.0), // Add spacing between profile picture and name
                 Text(
                   'බැදපු තුනපහ කුඩු\nරු 2760.00/1kg\nNew Spices Lanka', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
@@ -115,7 +123,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
               color: Colors.grey, // Adjust color as needed
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Replace CircleAvatar with Image
                 Image.asset(
@@ -123,7 +132,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(width: 5.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 5.0), // Add spacing between profile picture and name
                 Text(
                   'තුනපහ කුඩු\nරු 2300.00/1kg\nNavidu Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
@@ -141,7 +151,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
               color: Colors.grey, // Adjust color as needed
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align profile on right
+              mainAxisAlignment:
+                  MainAxisAlignment.start, // Align profile on right
               children: [
                 // Replace CircleAvatar with Image
                 Image.asset(
@@ -149,7 +160,8 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(width: 5.0), // Add spacing between profile picture and name
+                SizedBox(
+                    width: 5.0), // Add spacing between profile picture and name
                 Text(
                   'ගම්මිරිස් කුඩු\nරු 3400.00/1kg\nSpices Lanka', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),

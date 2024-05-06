@@ -9,30 +9,30 @@ class UserProfile extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-        title: const Text('User profile'),
-        actions: [
-          IconButton(
-            icon: Image.asset('assets/Compass.png'),
-            onPressed: () {
-              // Handle first icon press action
-            },
-          ),
-          IconButton(
-            icon: Image.asset('assets/Switch.png'),
-            onPressed: () {
-              // Handle second icon press action
-            },
-          ),
-        ],
-        backgroundColor: Color(0xFF25DA15),
-      ),
+          title: const Text('User profile'),
+          actions: [
+            IconButton(
+              icon: Image.asset('assets/Compass.png'),
+              onPressed: () {
+                // Handle first icon press action
+              },
+            ),
+            IconButton(
+              icon: Image.asset('assets/Switch.png'),
+              onPressed: () {
+                // Handle second icon press action
+              },
+            ),
+          ],
+          backgroundColor: const Color(0xFF25DA15),
+        ),
         body: SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(height: 24),
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 80.0,
                   backgroundImage: AssetImage('assets/Userget.png'),
                 ),
@@ -53,12 +53,12 @@ class UserProfile extends StatelessWidget {
                 // User information sections
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Name:',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -67,15 +67,15 @@ class UserProfile extends StatelessWidget {
                           ),
                           Text(
                             ' Nihal Gunarathne', // Replace with actual user name
-                            style: const TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 16),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Mobile Number:',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -84,15 +84,15 @@ class UserProfile extends StatelessWidget {
                           ),
                           Text(
                             ' 0774896127', // Replace with actual user name
-                            style: const TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 16),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 8.0),
+                      SizedBox(height: 8.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Email:',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class UserProfile extends StatelessWidget {
                           ),
                           Text(
                             ' nihalg@example.com', // Replace with actual email
-                            style: const TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 16),
                           ),
                         ],
                       ),

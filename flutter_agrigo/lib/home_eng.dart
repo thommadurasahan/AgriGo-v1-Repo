@@ -17,8 +17,8 @@ class _HomeState extends State<HomeEng> {
     'assets/Slider2.png',
     'assets/Slider4.png',
   ];
-  
-  int _selectedIndex = 2; 
+
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +42,6 @@ class _HomeState extends State<HomeEng> {
         ],
         backgroundColor: agriGoGreen,
       ),
-
-
       body: SingleChildScrollView(
         // Wrap the content with SingleChildScrollView
         child: Column(
@@ -132,82 +130,82 @@ class _HomeState extends State<HomeEng> {
             ),
             const SizedBox(height: 16),
             Padding(
-            padding: EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisAlignment:
-                  MainAxisAlignment.spaceEvenly, // Distribute buttons evenly
-              children: [
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/VegeE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceEvenly, // Distribute buttons evenly
+                  children: [
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/VegeE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 14),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/FruitE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/FishE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 120.0, // Adjust width as needed
+                      height: 120.0,
+                      child: ImageButton(
+                        imagePath: 'assets/SpicesE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 110.0, // Adjust width as needed
+                      height: 110.0,
+                      child: ImageButton(
+                        imagePath: 'assets/ExportsE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    SizedBox(
+                      width: 110.0, // Adjust width as needed
+                      height: 110.0,
+                      child: ImageButton(
+                        imagePath: 'assets/OthersE.png',
+                        onPressed: () {
+                          // Handle button press action
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                ),
-                const SizedBox(width: 14),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/FruitE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/FishE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
-                child: ImageButton(
-                  imagePath: 'assets/SpicesE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 110.0, // Adjust width as needed
-                height: 110.0,
-                child: ImageButton(
-                  imagePath: 'assets/ExportsE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-                const SizedBox(width: 16),
-                SizedBox(
-                width: 110.0, // Adjust width as needed
-                height: 110.0,
-                child: ImageButton(
-                  imagePath: 'assets/OthersE.png',
-                  onPressed: () {
-                    // Handle button press action
-                  },
-                ),
-                ),
-              ],
+              ),
             ),
-        ),
-        ),
             const SizedBox(height: 50),
 
             // Your remaining content widgets go here (These will also be scrollable)
@@ -216,21 +214,21 @@ class _HomeState extends State<HomeEng> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // Added fixed type
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.category),
+            icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(Icons.notifications),
             label: 'Notifications',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.menu),
+            icon: Icon(Icons.menu),
             label: 'Menu',
           ),
         ],
@@ -243,7 +241,7 @@ class _HomeState extends State<HomeEng> {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeEng()),
+                MaterialPageRoute(builder: (context) => const HomeEng()),
               );
               break;
             case 1:
