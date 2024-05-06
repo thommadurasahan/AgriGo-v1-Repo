@@ -133,7 +133,7 @@ class _HomeState extends State<HomeSin> {
             ),
             const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -217,21 +217,21 @@ class _HomeState extends State<HomeSin> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // Added fixed type
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.category),
+            icon: Icon(Icons.category),
             label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(Icons.notifications),
             label: 'Notifications',
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.menu),
+            icon: Icon(Icons.menu),
             label: 'Menu',
           ),
         ],
@@ -247,19 +247,19 @@ class _HomeState extends State<HomeSin> {
             case 1:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Categories()),
+                MaterialPageRoute(builder: (context) => const Categories()),
               );
               break;
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Notifications()),
+                MaterialPageRoute(builder: (context) => const Notifications()),
               );
               break;
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MenuPage()),
+                MaterialPageRoute(builder: (context) => const MenuPage()),
               );
               break;
             default:

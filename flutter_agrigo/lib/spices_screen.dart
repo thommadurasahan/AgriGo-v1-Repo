@@ -12,7 +12,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AgriGO'),
+        title: const Text('AgriGO'),
         actions: [
           IconButton(
             icon: Image.asset('assets/Compass.png'),
@@ -27,17 +27,17 @@ class _SpicesScreenState extends State<SpicesScreen> {
             },
           ),
         ],
-        backgroundColor: Color(0xFF25DA15),
+        backgroundColor: const Color(0xFF25DA15),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Add spacing between profile picture and name
-            Text(
+            const Text(
               'All Spices', // Replace with your profile name
               style: TextStyle(fontSize: 20.0),
             ),
-            SizedBox(width: 1.0),
+            const SizedBox(width: 1.0),
             Row(
               mainAxisAlignment:
                   MainAxisAlignment.start, // Align profile on right
@@ -48,13 +48,13 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(
+                const SizedBox(
                     width: 5.0), // Add spacing between profile picture and name
-                Text(
+                const Text(
                   'මිරිස් කුඩු\nරු 2400.00/1kg\nNadun Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(width: 20.0),
+                const SizedBox(width: 20.0),
                 Image.asset(
                   'assets/Compass.png',
                   width: 120.0, // Adjust width as needed
@@ -62,7 +62,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
@@ -76,13 +76,13 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(
+                const SizedBox(
                     width: 5.0), // Add spacing between profile picture and name
-                Text(
+                const Text(
                   'කහ කුඩු\nරු 3100.00/1kg\nBest Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(width: 20.0),
+                const SizedBox(width: 20.0),
                 Image.asset(
                   'assets/Compass.png',
                   width: 120.0, // Adjust width as needed
@@ -90,7 +90,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
@@ -104,13 +104,13 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(
+                const SizedBox(
                     width: 5.0), // Add spacing between profile picture and name
-                Text(
+                const Text(
                   'බැදපු තුනපහ කුඩු\nරු 2760.00/1kg\nNew Spices Lanka', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(width: 8.0),
+                const SizedBox(width: 8.0),
                 Image.asset(
                   'assets/Compass.png',
                   width: 120.0, // Adjust width as needed
@@ -118,7 +118,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
@@ -132,13 +132,13 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(
+                const SizedBox(
                     width: 5.0), // Add spacing between profile picture and name
-                Text(
+                const Text(
                   'තුනපහ කුඩු\nරු 2300.00/1kg\nNavidu Spices', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(width: 30.0),
+                const SizedBox(width: 30.0),
                 Image.asset(
                   'assets/Compass.png',
                   width: 120.0, // Adjust width as needed
@@ -146,7 +146,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),
@@ -160,13 +160,13 @@ class _SpicesScreenState extends State<SpicesScreen> {
                   width: 120.0, // Adjust width as needed
                   height: 120.0, // Adjust height as needed
                 ),
-                SizedBox(
+                const SizedBox(
                     width: 5.0), // Add spacing between profile picture and name
-                Text(
+                const Text(
                   'ගම්මිරිස් කුඩු\nරු 3400.00/1kg\nSpices Lanka', // Replace with your profile name
                   style: TextStyle(fontSize: 16.0),
                 ),
-                SizedBox(width: 30.0),
+                // const SizedBox(width: 30.0),
                 Image.asset(
                   'assets/Compass.png',
                   width: 120.0, // Adjust width as needed
@@ -174,7 +174,7 @@ class _SpicesScreenState extends State<SpicesScreen> {
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               thickness: 1.0, // Adjust thickness as needed
               color: Colors.grey, // Adjust color as needed
             ),

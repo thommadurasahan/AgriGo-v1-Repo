@@ -155,7 +155,7 @@ class Library extends StatelessWidget {
     required List<String> prices,
     required bool showAllItems,
   }) {
-    final maxVisibleItems = 3;
+    const maxVisibleItems = 3;
     final showMoreButton = !showAllItems
         ? TextButton(
             onPressed: () {

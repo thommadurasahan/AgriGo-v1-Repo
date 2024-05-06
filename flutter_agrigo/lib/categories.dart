@@ -122,7 +122,7 @@ class Categories extends StatelessWidget {
             case 0:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeSin()),
+                MaterialPageRoute(builder: (context) => const HomeSin()),
               );
               break;
             case 1:
@@ -131,7 +131,7 @@ class Categories extends StatelessWidget {
             case 2:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Notifications()),
+                MaterialPageRoute(builder: (context) => const Notifications()),
               );
               break;
             case 3:

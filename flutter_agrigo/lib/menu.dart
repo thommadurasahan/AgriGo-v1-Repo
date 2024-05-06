@@ -106,7 +106,8 @@ class _MenuPageState extends State<MenuPage> {
               case 2:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Notifications()),
+                  MaterialPageRoute(
+                      builder: (context) => const Notifications()),
                 );
                 break;
               case 3:
