@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_agrigo/Home_sin.dart';
+import 'package:flutter_agrigo/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeSin(),
+      home: MenuPage(),
     );
   }
 }

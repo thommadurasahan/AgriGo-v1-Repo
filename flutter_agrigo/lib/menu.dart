@@ -43,22 +43,17 @@ class _MenuPageState extends State<MenuPage> {
                       thickness: 1,
                       color: Colors.black,
                     ),
-                    _buildMenuItem(context, "Contact Us"),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                    ),
-                    _buildMenuItem(context, "About Us"),
-                    const Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                    ),
                     _buildMenuItem(context, "Terms of Use"),
                     const Divider(
                       thickness: 1,
                       color: Colors.black,
                     ),
                     _buildMenuItem(context, "Privacy Policy"),
+                    const Divider(
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
+                    _buildMenuItem(context, "About Us"),
                   ],
                 ),
               ),
