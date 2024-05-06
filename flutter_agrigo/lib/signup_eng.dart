@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignUpScreenEng extends StatefulWidget {
-  const SignUpScreenEng({super.key});
+class SignUpEng extends StatefulWidget {
+  const SignUpEng({super.key});
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _SignUpScreenState extends State<SignUpScreenEng> {
+class _SignUpState extends State<SignUpEng> {
   // Text field controllers for user input
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();

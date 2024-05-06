@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/signup_eng.dart';
+import 'package:flutter_agrigo/login_eng.dart';
+import 'package:flutter_agrigo/home_eng.dart';
 
 class GetStartEng extends StatelessWidget {
   const GetStartEng({super.key});
@@ -35,7 +38,10 @@ class GetStartEng extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpEng()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
@@ -52,7 +58,10 @@ class GetStartEng extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LogInEng()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
@@ -69,7 +78,8 @@ class GetStartEng extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomeEng()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),

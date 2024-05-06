@@ -61,7 +61,7 @@ class GetStartSin extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LoginSin()));
+                          builder: (context) => const LogInSin()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),

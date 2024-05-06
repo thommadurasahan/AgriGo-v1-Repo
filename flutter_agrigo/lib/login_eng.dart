@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginEng extends StatelessWidget {
-  const LoginEng({super.key});
+class LogInEng extends StatelessWidget {
+  const LogInEng({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,11 @@ class LoginEng extends StatelessWidget {
 
                 // User text (replace with actual user data)
                 Text(
-                "User",
-                style: TextStyle(
-                color: Colors.green.shade800,
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
+                  "User",
+                  style: TextStyle(
+                    color: Colors.green.shade800,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
                   ),
                 ),
 
