@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/signup_sin.dart';
+import 'package:flutter_agrigo/login_sin.dart';
+import 'package:flutter_agrigo/home_sin.dart';
 
 class GetStartSin extends StatelessWidget {
   const GetStartSin({super.key});
@@ -35,7 +38,10 @@ class GetStartSin extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpSin()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
@@ -52,7 +58,10 @@ class GetStartSin extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginSin()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
@@ -69,7 +78,8 @@ class GetStartSin extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomeSin()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 50),
