@@ -1,52 +1,106 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/categories.dart';
+import 'package:flutter_agrigo/home_sin.dart';
+import 'package:flutter_agrigo/menu.dart';
 
-class Notifications extends StatelessWidget {
+class Notifications extends StatefulWidget {
+  const Notifications({Key? key}) : super(key: key);
+
+  @override
+  _NotificationsState createState() => _NotificationsState();
+}
+
+class _NotificationsState extends State<Notifications> {
+  int _selectedIndex = 2; // Initially set to Notifications
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Notifications",
-                style: TextStyle(
-                  color: Colors.green.shade800,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Notifications",
+                  style: const TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
                 ),
-              ),
-              SizedBox(height: 20),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10.0), 
-                child: Container(
-                  color: Color(0xFF25DA15), 
-                  width: 400,
-                  height: 630,
+                const SizedBox(height: 20),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    color: const Color(0xFF25DA15),
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height *
+                        0.8, // Adjust height based on screen size
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildMenuItem(BuildContext context, String title) {
-    return ListTile(
-      title: Row(
-        children: [
-          Icon(Icons.arrow_forward),
-          SizedBox(width: 10),
-          Text(title),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Added fixed type
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.category),
+            label: 'Categories',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.menu),
+            label: 'Menu',
+          ),
         ],
+        currentIndex: _selectedIndex, // Set the current index
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index; // Update the selected index
+          });
+          switch (index) {
+            case 0:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeSin()),
+              );
+              break;
+            case 1:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Categories()),
+              );
+              break;
+            case 2:
+              // Handle navigation to Notifications screen
+              // Replace with your desired navigation logic
+              break;
+            case 3:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MenuPage()),
+              );
+              break;
+            default:
+              // Handle unexpected index
+              break;
+          }
+        },
       ),
-      onTap: () {
-        // Add your action here
-      },
     );
   }
 }

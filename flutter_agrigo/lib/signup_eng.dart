@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignUpPageSin extends StatefulWidget {
-  const SignUpPageSin({super.key});
+class SignUpPageEng extends StatefulWidget {
+  const SignUpPageEng({super.key});
 
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _SignUpPageState extends State<SignUpPageSin> {
+class _SignUpPageState extends State<SignUpPageEng> {
   // Text field controllers for user input
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -33,9 +33,9 @@ class _SignUpPageState extends State<SignUpPageSin> {
             ),
             const SizedBox(height: 18),
             const Text(
-              'අප වෙත අලුත් නම් ඔබගේ විද්‍යුත් ලිපිනය තහවුරු කර ලියපදිංචිය සම්පූර්ණ කිරීමට ඉදිරියට යන්න',
+              'If you are new to the AgriGo app confirm your email address and complete the registration',
               style: TextStyle(
-                fontSize: 12.0,
+                fontSize: 14.0,
                 color: Colors.black,
               ),
             ),
@@ -43,8 +43,8 @@ class _SignUpPageState extends State<SignUpPageSin> {
             TextField(
               controller: _emailController,
               decoration: const InputDecoration(
-                labelText: 'විද්‍යුත් ලිපිනය',
-                labelStyle: TextStyle(fontSize: 12),
+                labelText: 'Email Address',
+                labelStyle: TextStyle(fontSize: 14),
               ),
               keyboardType: TextInputType.emailAddress,
             ),
@@ -62,7 +62,7 @@ class _SignUpPageState extends State<SignUpPageSin> {
                 backgroundColor: const Color(0xFF25DA15),
               ),
               child: const Text(
-                "තහවුරු කරන්න",
+                "Confirm",
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -70,24 +70,24 @@ class _SignUpPageState extends State<SignUpPageSin> {
             TextField(
               controller: _firstNameController,
               decoration: const InputDecoration(
-                labelText: 'නම',
-                labelStyle: TextStyle(fontSize: 12),
+                labelText: 'Name',
+                labelStyle: TextStyle(fontSize: 14),
               ),
             ),
             // Enter Last Name
             TextField(
               controller: _lastNameController,
               decoration: const InputDecoration(
-                labelText: 'දුරකථන අංකය',
-                labelStyle: TextStyle(fontSize: 12),
+                labelText: 'Telephone Number',
+                labelStyle: TextStyle(fontSize: 14),
               ),
             ),
             // Enter Password
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                labelText: 'මුරපදය',
-                labelStyle: TextStyle(fontSize: 12),
+                labelText: 'Password',
+                labelStyle: TextStyle(fontSize: 14),
               ),
               obscureText: true,
             ),
@@ -95,9 +95,9 @@ class _SignUpPageState extends State<SignUpPageSin> {
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
+                'I have read and agree to your terms and conditions and I permit to use of my data.',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 14.0,
                   color: Colors.black,
                 ),
               ),
@@ -123,7 +123,7 @@ class _SignUpPageState extends State<SignUpPageSin> {
                 backgroundColor: const Color(0xFF25DA15),
               ),
               child: const Text(
-                'ලියාපදිංචි වන්න',
+                'Register',
                 style: TextStyle(color: Colors.white),
               ),
             ),

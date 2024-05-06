@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginEng extends StatelessWidget {
+  const LoginEng({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +22,20 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 20.0),
 
                 // User text (replace with actual user data)
-                const Text(
-                  'User',
-                  style: TextStyle(fontSize: 18.0),
+                Text(
+                "User",
+                style: TextStyle(
+                color: Colors.green.shade800,
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+                  ),
                 ),
 
                 const Padding(
                   padding: EdgeInsets.all(16.0),
                   child: TextField(
                     decoration: InputDecoration(
-                      labelText: 'පරිශීලක නාමය',
+                      labelText: 'Name or Email Address',
                     ),
                   ),
                 ),
@@ -40,15 +44,7 @@ class LoginPage extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      labelText: 'මුරපදය',
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'විද්‍යුත් ලිපිනය',
+                      labelText: 'Password',
                     ),
                   ),
                 ),
@@ -62,7 +58,7 @@ class LoginPage extends StatelessWidget {
                       backgroundColor: const Color(0xFF25DA15),
                     ),
                     child: const Text(
-                      'ලොග් වන්න',
+                      'Log In',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

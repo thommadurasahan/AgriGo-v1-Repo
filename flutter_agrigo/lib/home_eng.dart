@@ -1,20 +1,16 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_agrigo/categories.dart';
-import 'package:flutter_agrigo/menu.dart';
-import 'package:flutter_agrigo/notification.dart';
 
 const Color agriGoGreen = Color(0xFF25DA15);
 
-class HomeSin extends StatefulWidget {
-  const HomeSin({super.key});
+class HomeEng extends StatefulWidget {
+  const HomeEng({super.key});
 
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<HomeSin> {
+class _HomeState extends State<HomeEng> {
   int _currentImageIndex = 0;
   final List<String> _imagePaths = [
     'assets/Slider3.jpg',
@@ -147,7 +143,7 @@ class _HomeState extends State<HomeSin> {
                 width: 120.0, // Adjust width as needed
                 height: 120.0,
                 child: ImageButton(
-                  imagePath: 'assets/Vegitable.png',
+                  imagePath: 'assets/VegeE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -158,7 +154,7 @@ class _HomeState extends State<HomeSin> {
                 width: 120.0, // Adjust width as needed
                 height: 120.0,
                 child: ImageButton(
-                  imagePath: 'assets/Fruit.png',
+                  imagePath: 'assets/FruitE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -169,7 +165,7 @@ class _HomeState extends State<HomeSin> {
                 width: 120.0, // Adjust width as needed
                 height: 120.0,
                 child: ImageButton(
-                  imagePath: 'assets/Fish.png',
+                  imagePath: 'assets/FishE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -180,7 +176,7 @@ class _HomeState extends State<HomeSin> {
                 width: 120.0, // Adjust width as needed
                 height: 120.0,
                 child: ImageButton(
-                  imagePath: 'assets/Spices.png',
+                  imagePath: 'assets/SpicesE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -188,10 +184,10 @@ class _HomeState extends State<HomeSin> {
                 ),
                 const SizedBox(width: 16),
                 SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
+                width: 110.0, // Adjust width as needed
+                height: 110.0,
                 child: ImageButton(
-                  imagePath: 'assets/Export.png',
+                  imagePath: 'assets/ExportsE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -199,10 +195,10 @@ class _HomeState extends State<HomeSin> {
                 ),
                 const SizedBox(width: 16),
                 SizedBox(
-                width: 120.0, // Adjust width as needed
-                height: 120.0,
+                width: 110.0, // Adjust width as needed
+                height: 110.0,
                 child: ImageButton(
-                  imagePath: 'assets/Others.png',
+                  imagePath: 'assets/OthersE.png',
                   onPressed: () {
                     // Handle button press action
                   },
@@ -245,25 +241,22 @@ class _HomeState extends State<HomeSin> {
           });
           switch (index) {
             case 0:
-              //Home
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeEng()),
+              );
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Categories()),
-              );
+              // Handle navigation to Categories screen
+              // Replace with your desired navigation logic
               break;
             case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Notifications()),
-              );
+              // Handle navigation to Notifications screen
+              // Replace with your desired navigation logic
               break;
             case 3:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MenuPage()),
-              );
+              // Handle navigation to Menu screen
+              // Replace with your desired navigation logic
               break;
             default:
               // Handle unexpected index
