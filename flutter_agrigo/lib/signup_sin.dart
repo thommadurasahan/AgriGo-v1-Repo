@@ -1,4 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_agrigo/firebase_options.dart';
+import 'package:flutter_agrigo/get_started_sin.dart';
 
 class SignUpSin extends StatefulWidget {
   const SignUpSin({super.key});
@@ -53,6 +57,9 @@ class _SignUpState extends State<SignUpSin> {
                 labelText: 'විද්‍යුත් ලිපිනය',
                 labelStyle: TextStyle(fontSize: 12),
               ),
+              enableSuggestions: false,
+              autocorrect: false,
+              // Set the email keyboard to show the @ sign
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 18),
@@ -96,7 +103,10 @@ class _SignUpState extends State<SignUpSin> {
                 labelText: 'මුරපදය',
                 labelStyle: TextStyle(fontSize: 12),
               ),
+              // Hide the password
               obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
             ),
             const SizedBox(height: 18),
             // Checkbox for Terms and Conditions
@@ -116,11 +126,14 @@ class _SignUpState extends State<SignUpSin> {
             ElevatedButton(
               onPressed: () async {
                 // Add functionality to sign up the user
-                if (_agreedToTerms) {
-                  // If agreed to terms, process user sign up
-                } else {
-                  // Show error message if terms not agreed to
-                }
+                await Firebase.initializeApp(
+                  options: DefaultFirebaseOptions.currentPlatform,
+                );
+                final email = _emailController.text;
+                final password = _passwordController.text;
+
+                await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                    email: email, password: password);
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(350, 40),
@@ -134,6 +147,25 @@ class _SignUpState extends State<SignUpSin> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
+            const Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GetStartSin()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(350, 40),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                ),
+                child: const Text('පෙර')),
           ],
         ),
       ),

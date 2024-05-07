@@ -18,6 +18,16 @@ class GetStartSin extends StatelessWidget {
           ),
           child: Column(
             children: [
+              Text("AgriGO වෙත පිළිගන්නෙමු",
+                  style: TextStyle(
+                    color: Colors.green.shade800,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  )),
+              const Spacer(
+                flex: 56,
+              ),
+              const SizedBox(height: 40),
               SizedBox(
                 height: 250,
                 width: 250,
@@ -33,64 +43,73 @@ class GetStartSin extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(
-                flex: 56,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpSin()));
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              const SizedBox(height: 40),
+              SizedBox(
+                width: 296,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpSin()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    backgroundColor: const Color(0xFF25DA15),
                   ),
-                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
-                ),
-                child: const Text(
-                  "ලියාපදිංචි වන්න",
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LogInSin()));
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                  child: const Text(
+                    "ලියාපදිංචි වන්න",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  backgroundColor: const Color(0xFF25DA15),
-                ),
-                child: const Text(
-                  "නැවත ඇතුළු වන්න",
-                  style: TextStyle(color: Colors.white),
                 ),
               ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const HomeSin()));
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 296,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LogInSin()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    backgroundColor: const Color(0xFF25DA15),
                   ),
-                  backgroundColor: const Color(0xFF25DA15),
+                  child: const Text(
+                    "නැවත ඇතුළු වන්න",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                child: const Text(
-                  "මඟ හරින්න",
-                  style: TextStyle(color: Colors.white),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 296,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeSin()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(350, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                  ),
+                  child: const Text(
+                    "මඟ හරින්න",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
               const Spacer(
