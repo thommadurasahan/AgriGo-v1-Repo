@@ -11,9 +11,16 @@ class _SignUpState extends State<SignUpSin> {
   // Text field controllers for user input
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   bool _agreedToTerms = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +75,7 @@ class _SignUpState extends State<SignUpSin> {
             ),
             // Enter First Name
             TextField(
-              controller: _firstNameController,
+              controller: _nameController,
               decoration: const InputDecoration(
                 labelText: 'නම',
                 labelStyle: TextStyle(fontSize: 12),
