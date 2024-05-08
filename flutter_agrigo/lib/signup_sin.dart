@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_agrigo/firebase_options.dart';
 import 'package:flutter_agrigo/get_started_sin.dart';
 
@@ -12,11 +13,12 @@ class SignUpSin extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUpSin> {
-  // Text field controllers for user input
+  // Field controllers for user input
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _numberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+
   bool _agreedToTerms = false;
 
   @override
@@ -35,7 +37,7 @@ class _SignUpState extends State<SignUpSin> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Register",
+              "නව ගිණුමක් සෑදීම",
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
@@ -44,43 +46,13 @@ class _SignUpState extends State<SignUpSin> {
             ),
             const SizedBox(height: 18),
             const Text(
-              'අප වෙත අලුත් නම් ඔබගේ විද්‍යුත් ලිපිනය තහවුරු කර ලියපදිංචිය සම්පූර්ණ කිරීමට ඉදිරියට යන්න',
+              'අප වෙත අලුත් නම් ඔබගේ නම, දුරකථන අංකය, විද්‍යුත් ලිපිනය සහ නව මුරපදයක් ඇතුලත් කර ලියාපදිංචි වන්න.',
               style: TextStyle(
                 fontSize: 12.0,
                 color: Colors.black,
               ),
             ),
-            // Enter Email
-            TextField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                labelText: 'විද්‍යුත් ලිපිනය',
-                labelStyle: TextStyle(fontSize: 12),
-              ),
-              enableSuggestions: false,
-              autocorrect: false,
-              // Set the email keyboard to show the @ sign
-              keyboardType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 18),
-            // Comfirm Email
-            ElevatedButton(
-              onPressed: () {
-                // Add your action here
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350, 40),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                backgroundColor: const Color(0xFF25DA15),
-              ),
-              child: const Text(
-                "තහවුරු කරන්න",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            // Enter First Name
+            // Enter Name
             TextField(
               controller: _nameController,
               decoration: const InputDecoration(
@@ -88,11 +60,30 @@ class _SignUpState extends State<SignUpSin> {
                 labelStyle: TextStyle(fontSize: 12),
               ),
             ),
-            // Enter Last Name
+            // Enter Phone Number
             TextField(
-              controller: _lastNameController,
+              controller: _numberController,
+              // Set the phone number keyboard to show the number pad
+              keyboardType: TextInputType.phone,
+              // Only allow numbers
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                LengthLimitingTextInputFormatter(10)
+              ],
               decoration: const InputDecoration(
                 labelText: 'දුරකථන අංකය',
+                labelStyle: TextStyle(fontSize: 12),
+              ),
+            ),
+            // Enter Email
+            TextField(
+              controller: _emailController,
+              enableSuggestions: false,
+              autocorrect: false,
+              // Set the email keyboard to show the @ sign
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                labelText: 'විද්‍යුත් ලිපිනය',
                 labelStyle: TextStyle(fontSize: 12),
               ),
             ),
@@ -112,7 +103,7 @@ class _SignUpState extends State<SignUpSin> {
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'ඔබගේ සේවා කොන්දේසි සහ ප්‍රථිපත්ති කියවා එකග වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
+                'ඔබගේ සේවා කොන්දේසිවලට එකඟ වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: Colors.black,
@@ -122,50 +113,57 @@ class _SignUpState extends State<SignUpSin> {
               onChanged: (value) => setState(() => _agreedToTerms = value!),
               activeColor: const Color(0xFF25DA15),
             ),
+            const SizedBox(height: 18),
             // Sign Up Button
-            ElevatedButton(
-              onPressed: () async {
-                // Add functionality to sign up the user
-                await Firebase.initializeApp(
-                  options: DefaultFirebaseOptions.currentPlatform,
-                );
-                final email = _emailController.text;
-                final password = _passwordController.text;
+            SizedBox(
+              width: 296,
+              child: ElevatedButton(
+                onPressed: () async {
+                  // Add functionality to sign up the user
+                  await Firebase.initializeApp(
+                    options: DefaultFirebaseOptions.currentPlatform,
+                  );
+                  final email = _emailController.text;
+                  final password = _passwordController.text;
 
-                await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                    email: email, password: password);
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350, 40),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                backgroundColor: const Color(0xFF25DA15),
-              ),
-              child: const Text(
-                'ලියාපදිංචි වන්න',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            const Divider(
-              thickness: 1,
-              color: Colors.black,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GetStartSin()));
+                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                      email: email, password: password);
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(350, 40),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                  backgroundColor: const Color(0xFF25DA15),
                 ),
-                child: const Text('පෙර')),
+                child: const Text(
+                  'ලියාපදිංචි වන්න',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            SizedBox(
+              width: 296,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GetStartSin()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(350, 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                  ),
+                  child: const Text('ලියාපදිංචි වීමට අවශ්‍ය නැතිද?')),
+            ),
           ],
         ),
       ),

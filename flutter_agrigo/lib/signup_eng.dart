@@ -95,7 +95,7 @@ class _SignUpState extends State<SignUpEng> {
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'I have read and agree to your terms of use and I permit to use of my data.',
+                'I agree to your terms of conditions and I permit to use of my data.',
                 style: TextStyle(
                   fontSize: 14.0,
                   color: Colors.black,
