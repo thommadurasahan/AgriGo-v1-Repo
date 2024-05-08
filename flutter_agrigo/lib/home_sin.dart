@@ -10,10 +10,10 @@ class HomeSin extends StatefulWidget {
   const HomeSin({super.key});
 
   @override
-  _HomeState createState() => _HomeState();
+  State<HomeSin> createState() => _HomeSinState();
 }
 
-class _HomeState extends State<HomeSin> {
+class _HomeSinState extends State<HomeSin> {
   int _currentImageIndex = 0;
   final List<String> _imagePaths = [
     'assets/Slider3.jpg',
@@ -259,7 +259,7 @@ class _HomeState extends State<HomeSin> {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MenuPage()),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
               break;
             default:

@@ -5,7 +5,7 @@ class PageScreen extends StatefulWidget {
   const PageScreen({super.key});
 
   @override
-  _PageScreenState createState() => _PageScreenState();
+  State<PageScreen> createState() => _PageScreenState();
 }
 
 class _PageScreenState extends State<PageScreen> {

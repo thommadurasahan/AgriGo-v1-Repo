@@ -4,7 +4,7 @@ class VegScreen extends StatefulWidget {
   const VegScreen({super.key});
 
   @override
-  _VegScreenState createState() => _VegScreenState();
+  State<VegScreen> createState() => _VegScreenState();
 }
 
 class _VegScreenState extends State<VegScreen> {

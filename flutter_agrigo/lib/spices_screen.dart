@@ -4,7 +4,7 @@ class SpicesScreen extends StatefulWidget {
   const SpicesScreen({super.key});
 
   @override
-  _SpicesScreenState createState() => _SpicesScreenState();
+  State<SpicesScreen> createState() => _SpicesScreenState();
 }
 
 class _SpicesScreenState extends State<SpicesScreen> {

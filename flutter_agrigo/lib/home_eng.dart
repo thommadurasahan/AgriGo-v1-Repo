@@ -7,10 +7,10 @@ class HomeEng extends StatefulWidget {
   const HomeEng({super.key});
 
   @override
-  _HomeState createState() => _HomeState();
+  State<HomeEng> createState() => _HomeEngState();
 }
 
-class _HomeState extends State<HomeEng> {
+class _HomeEngState extends State<HomeEng> {
   int _currentImageIndex = 0;
   final List<String> _imagePaths = [
     'assets/Slider3.jpg',

@@ -7,7 +7,7 @@ class Notifications extends StatefulWidget {
   const Notifications({super.key});
 
   @override
-  _NotificationsState createState() => _NotificationsState();
+  State<Notifications> createState() => _NotificationsState();
 }
 
 class _NotificationsState extends State<Notifications> {
@@ -92,7 +92,7 @@ class _NotificationsState extends State<Notifications> {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MenuPage()),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
               break;
             default:

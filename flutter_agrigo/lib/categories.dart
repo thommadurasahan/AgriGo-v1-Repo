@@ -137,7 +137,7 @@ class Categories extends StatelessWidget {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MenuPage()),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
               break;
             default:

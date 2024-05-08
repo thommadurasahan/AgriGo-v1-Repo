@@ -9,7 +9,7 @@ class SignUpSin extends StatefulWidget {
   const SignUpSin({super.key});
 
   @override
-  _SignUpSinState createState() => _SignUpSinState();
+  State<SignUpSin> createState() => _SignUpSinState();
 }
 
 class _SignUpSinState extends State<SignUpSin> {
@@ -103,7 +103,7 @@ class _SignUpSinState extends State<SignUpSin> {
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'ඔබගේ සේවා කොන්දේසිවලට එකඟ වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දේ.',
+                'ඔබගේ සේවා කොන්දේසිවලට එකඟ වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දෙමි .',
                 style: TextStyle(
                   fontSize: 12.0,
                   color: Colors.black,

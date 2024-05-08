@@ -3,14 +3,14 @@ import 'package:flutter_agrigo/categories.dart';
 import 'package:flutter_agrigo/home_sin.dart';
 import 'package:flutter_agrigo/notification.dart';
 
-class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+class Menu extends StatefulWidget {
+  const Menu({super.key});
 
   @override
-  _MenuPageState createState() => _MenuPageState();
+  State<Menu> createState() => _MenuState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _MenuState extends State<Menu> {
   int _selectedIndex = 0; // Initialize the selected index
 
   @override

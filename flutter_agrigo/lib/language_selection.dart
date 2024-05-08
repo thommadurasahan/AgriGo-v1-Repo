@@ -4,10 +4,10 @@ class LanguageSelection extends StatefulWidget {
   const LanguageSelection({super.key});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<LanguageSelection> createState() => _LanguageSelectionState();
 }
 
-class _MenuState extends State<LanguageSelection> {
+class _LanguageSelectionState extends State<LanguageSelection> {
   bool isSelectedSwitch1 = false;
   bool isSelectedSwitch2 = false;
 
