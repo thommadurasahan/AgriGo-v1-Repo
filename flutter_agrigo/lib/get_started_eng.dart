@@ -44,72 +44,61 @@ class GetStartEng extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              SizedBox(
-                width: 296,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpEng()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(350, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    backgroundColor: const Color(0xFF25DA15),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpEng()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(296, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  child: const Text(
-                    "REGISTER",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  backgroundColor: const Color(0xFF25DA15),
+                ),
+                child: const Text(
+                  "REGISTER",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 296,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LogInEng()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(350, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    backgroundColor: const Color(0xFF25DA15),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LogInEng()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(296, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  child: const Text(
-                    "LOG IN",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  backgroundColor: const Color(0xFF25DA15),
+                ),
+                child: const Text(
+                  "LOG IN",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: 296,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeEng()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(350, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomeEng()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(296, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  child: const Text(
-                    "SKIP",
-                    style: TextStyle(color: Colors.black),
-                  ),
+                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                ),
+                child: const Text(
+                  "SKIP",
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
               const Spacer(

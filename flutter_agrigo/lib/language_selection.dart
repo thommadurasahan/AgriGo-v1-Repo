@@ -21,7 +21,7 @@ class _MenuState extends State<LanguageSelection> {
           child: Column(
             children: [
               Text(
-                "Select your language",
+                "Select Your Language",
                 style: TextStyle(
                   color: Colors.green.shade800,
                   fontWeight: FontWeight.bold,
@@ -30,13 +30,12 @@ class _MenuState extends State<LanguageSelection> {
               ),
               const Spacer(flex: 48),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: const EdgeInsets.only(left: 22, right: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Default (සිංහල)",
+                      "සිංහල",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     Switch(
@@ -54,10 +53,9 @@ class _MenuState extends State<LanguageSelection> {
               ),
               const SizedBox(height: 18),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: const EdgeInsets.only(left: 22, right: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       "English",
@@ -83,15 +81,15 @@ class _MenuState extends State<LanguageSelection> {
                   // Add your action here
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
+                  minimumSize: const Size(296, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
                 child: const Text(
-                  "Next",
-                  style: TextStyle(color: Colors.white),
+                  "GO",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ],

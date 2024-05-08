@@ -1,19 +1,32 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_agrigo/firebase_options.dart';
+import 'package:flutter_agrigo/get_started_eng.dart';
 
 class SignUpEng extends StatefulWidget {
   const SignUpEng({super.key});
 
   @override
-  _SignUpState createState() => _SignUpState();
+  _SignUpEngState createState() => _SignUpEngState();
 }
 
-class _SignUpState extends State<SignUpEng> {
-  // Text field controllers for user input
+class _SignUpEngState extends State<SignUpEng> {
+  // Field controllers for user input
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _numberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+
   bool _agreedToTerms = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +37,7 @@ class _SignUpState extends State<SignUpEng> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Register",
+              "Creating a New Profile",
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
@@ -33,53 +46,45 @@ class _SignUpState extends State<SignUpEng> {
             ),
             const SizedBox(height: 18),
             const Text(
-              'If you are new to the AgriGo app confirm your email address and complete the registration',
+              'If you are new to us, register by providing your name, phone number, email address and a new password.',
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.black,
               ),
             ),
+            // Enter Name
+            TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(
+                labelText: 'Name',
+                labelStyle: TextStyle(fontSize: 12),
+              ),
+            ),
+            // Enter Phone Number
+            TextField(
+              controller: _numberController,
+              // Set the phone number keyboard to show the number pad
+              keyboardType: TextInputType.phone,
+              // Only allow numbers
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                LengthLimitingTextInputFormatter(10)
+              ],
+              decoration: const InputDecoration(
+                labelText: 'Phone Number',
+                labelStyle: TextStyle(fontSize: 12),
+              ),
+            ),
             // Enter Email
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(
-                labelText: 'Email Address',
-                labelStyle: TextStyle(fontSize: 14),
-              ),
+              enableSuggestions: false,
+              autocorrect: false,
+              // Set the email keyboard to show the @ sign
               keyboardType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 18),
-            // Comfirm Email
-            ElevatedButton(
-              onPressed: () {
-                // Add your action here
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350, 40),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                backgroundColor: const Color(0xFF25DA15),
-              ),
-              child: const Text(
-                "Confirm",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            // Enter First Name
-            TextField(
-              controller: _firstNameController,
               decoration: const InputDecoration(
-                labelText: 'Name',
-                labelStyle: TextStyle(fontSize: 14),
-              ),
-            ),
-            // Enter Last Name
-            TextField(
-              controller: _lastNameController,
-              decoration: const InputDecoration(
-                labelText: 'Telephone Number',
-                labelStyle: TextStyle(fontSize: 14),
+                labelText: 'Email',
+                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Password
@@ -87,15 +92,18 @@ class _SignUpState extends State<SignUpEng> {
               controller: _passwordController,
               decoration: const InputDecoration(
                 labelText: 'Password',
-                labelStyle: TextStyle(fontSize: 14),
+                labelStyle: TextStyle(fontSize: 12),
               ),
+              // Hide the password
               obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
             ),
             const SizedBox(height: 18),
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'I agree to your terms of conditions and I permit to use of my data.',
+                'I agree to your terms of Service and I permit to use of my data.',
                 style: TextStyle(
                   fontSize: 14.0,
                   color: Colors.black,
@@ -105,28 +113,52 @@ class _SignUpState extends State<SignUpEng> {
               onChanged: (value) => setState(() => _agreedToTerms = value!),
               activeColor: const Color(0xFF25DA15),
             ),
+            const SizedBox(height: 18),
             // Sign Up Button
             ElevatedButton(
               onPressed: () async {
                 // Add functionality to sign up the user
-                if (_agreedToTerms) {
-                  // If agreed to terms, process user sign up
-                } else {
-                  // Show error message if terms not agreed to
-                }
+                await Firebase.initializeApp(
+                  options: DefaultFirebaseOptions.currentPlatform,
+                );
+
+                final email = _emailController.text;
+                final password = _passwordController.text;
+
+                await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                    email: email, password: password);
               },
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(350, 40),
+                minimumSize: const Size(296, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 backgroundColor: const Color(0xFF25DA15),
               ),
               child: const Text(
-                'Register',
-                style: TextStyle(color: Colors.white),
+                'REGISTER',
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
+            const Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GetStartEng()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(296, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                ),
+                child: const Text("Don't want to Regiter?")),
           ],
         ),
       ),

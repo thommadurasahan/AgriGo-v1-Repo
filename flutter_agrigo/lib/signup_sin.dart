@@ -9,10 +9,10 @@ class SignUpSin extends StatefulWidget {
   const SignUpSin({super.key});
 
   @override
-  _SignUpState createState() => _SignUpState();
+  _SignUpSinState createState() => _SignUpSinState();
 }
 
-class _SignUpState extends State<SignUpSin> {
+class _SignUpSinState extends State<SignUpSin> {
   // Field controllers for user input
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _numberController = TextEditingController();
@@ -115,55 +115,50 @@ class _SignUpState extends State<SignUpSin> {
             ),
             const SizedBox(height: 18),
             // Sign Up Button
-            SizedBox(
-              width: 296,
-              child: ElevatedButton(
-                onPressed: () async {
-                  // Add functionality to sign up the user
-                  await Firebase.initializeApp(
-                    options: DefaultFirebaseOptions.currentPlatform,
-                  );
-                  final email = _emailController.text;
-                  final password = _passwordController.text;
+            ElevatedButton(
+              onPressed: () async {
+                // Add functionality to sign up the user
+                await Firebase.initializeApp(
+                  options: DefaultFirebaseOptions.currentPlatform,
+                );
 
-                  await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: email, password: password);
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 40),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  backgroundColor: const Color(0xFF25DA15),
+                final email = _emailController.text;
+                final password = _passwordController.text;
+
+                await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                    email: email, password: password);
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(296, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: const Text(
-                  'ලියාපදිංචි වන්න',
-                  style: TextStyle(color: Colors.white),
-                ),
+                backgroundColor: const Color(0xFF25DA15),
+              ),
+              child: const Text(
+                'ලියාපදිංචි වන්න',
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
             const Divider(
               thickness: 1,
               color: Colors.black,
             ),
-            SizedBox(
-              width: 296,
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const GetStartSin()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(350, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GetStartSin()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(296, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  child: const Text('ලියාපදිංචි වීමට අවශ්‍ය නැතිද?')),
-            ),
+                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                ),
+                child: const Text('ලියාපදිංචි වීමට අවශ්‍ය නැති ද?')),
           ],
         ),
       ),
