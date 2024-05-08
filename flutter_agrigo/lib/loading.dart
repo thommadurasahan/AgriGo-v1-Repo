@@ -13,7 +13,7 @@ class _LoadingState extends State<Loading> {
   void initState() {
     super.initState();
     // Add a delay if needed before navigating
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // Navigate to the language selection screen
       Navigator.pushReplacement(
         context,

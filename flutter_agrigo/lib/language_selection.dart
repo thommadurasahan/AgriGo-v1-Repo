@@ -8,7 +8,7 @@ class LanguageSelection extends StatefulWidget {
 }
 
 class _LanguageSelectionState extends State<LanguageSelection> {
-  bool isSelectedSwitch1 = false;
+  bool isSelectedSwitch1 = true;
   bool isSelectedSwitch2 = false;
 
   @override
@@ -43,6 +43,9 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                       onChanged: (value) {
                         setState(() {
                           isSelectedSwitch1 = value;
+                          if (value) {
+                            isSelectedSwitch2 = false;
+                          }
                         });
                       },
                       activeTrackColor: const Color(0xFF25DA15),
@@ -66,6 +69,9 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                       onChanged: (value) {
                         setState(() {
                           isSelectedSwitch2 = value;
+                          if (value) {
+                            isSelectedSwitch1 = false;
+                          }
                         });
                       },
                       activeTrackColor: const Color(0xFF25DA15),
