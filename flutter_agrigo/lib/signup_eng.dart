@@ -94,7 +94,7 @@ class _SignUpEngState extends State<SignUpEng> {
               controller: _passwordController,
               decoration: InputDecoration(
                 labelText: 'Password',
-                labelStyle: TextStyle(fontSize: 12),
+                labelStyle: const TextStyle(fontSize: 12),
                 suffixIcon: IconButton(
                   icon: Icon(
                     // Choose the icon based on password visibility
