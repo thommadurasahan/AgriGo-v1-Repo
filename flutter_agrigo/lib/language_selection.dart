@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/get_started_eng.dart';
+import 'package:flutter_agrigo/get_started_sin.dart';
 
 class LanguageSelection extends StatefulWidget {
   const LanguageSelection({super.key});
@@ -84,7 +86,17 @@ class _LanguageSelectionState extends State<LanguageSelection> {
               const SizedBox(height: 35),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  if (isSelectedSwitch2) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GetStartEng()));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GetStartSin()));
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(296, 50),
