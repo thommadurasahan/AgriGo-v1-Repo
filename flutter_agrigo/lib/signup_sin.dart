@@ -21,6 +21,8 @@ class _SignUpSinState extends State<SignUpSin> {
 
   bool _agreedToTerms = false;
 
+  bool _obscureText = true;
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -41,7 +43,7 @@ class _SignUpSinState extends State<SignUpSin> {
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             const SizedBox(height: 18),
@@ -90,12 +92,23 @@ class _SignUpSinState extends State<SignUpSin> {
             // Enter Password
             TextField(
               controller: _passwordController,
-              decoration: const InputDecoration(
-                labelText: 'මුරපදය',
-                labelStyle: TextStyle(fontSize: 12),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                labelStyle: const TextStyle(fontSize: 12),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    // Choose the icon based on password visibility
+                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                  ),
+                  onPressed: () {
+                    // Toggle the state of password visibility
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                ),
               ),
-              // Hide the password
-              obscureText: true,
+              obscureText: _obscureText,
               enableSuggestions: false,
               autocorrect: false,
             ),
@@ -140,10 +153,7 @@ class _SignUpSinState extends State<SignUpSin> {
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
-            const Divider(
-              thickness: 1,
-              color: Colors.black,
-            ),
+            const SizedBox(height: 16),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_agrigo/language_selection.dart';
+import 'package:flutter_agrigo/signup_eng.dart';
+import 'package:flutter_agrigo/signup_sin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LanguageSelection(),
+      home: SignUpEng(),
     );
   }
 }

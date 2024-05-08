@@ -21,6 +21,8 @@ class _SignUpEngState extends State<SignUpEng> {
 
   bool _agreedToTerms = false;
 
+  bool _obscureText = true;
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -41,7 +43,7 @@ class _SignUpEngState extends State<SignUpEng> {
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 22,
               ),
             ),
             const SizedBox(height: 18),
@@ -90,12 +92,23 @@ class _SignUpEngState extends State<SignUpEng> {
             // Enter Password
             TextField(
               controller: _passwordController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Password',
                 labelStyle: TextStyle(fontSize: 12),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    // Choose the icon based on password visibility
+                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                  ),
+                  onPressed: () {
+                    // Toggle the state of password visibility
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                ),
               ),
-              // Hide the password
-              obscureText: true,
+              obscureText: _obscureText,
               enableSuggestions: false,
               autocorrect: false,
             ),
@@ -140,10 +153,7 @@ class _SignUpEngState extends State<SignUpEng> {
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
-            const Divider(
-              thickness: 1,
-              color: Colors.black,
-            ),
+            const SizedBox(height: 16),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
