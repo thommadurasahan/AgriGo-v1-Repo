@@ -33,6 +33,7 @@ class _SignUpSinState extends State<SignUpSin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Wrap Column with SingleChildScrollView
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 85),
         child: Column(
@@ -93,7 +94,7 @@ class _SignUpSinState extends State<SignUpSin> {
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: '',
                 labelStyle: const TextStyle(fontSize: 12),
                 suffixIcon: IconButton(
                   icon: Icon(

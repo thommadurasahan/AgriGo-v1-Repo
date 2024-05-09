@@ -29,15 +29,15 @@ class GetStartSin extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               SizedBox(
-                height: 250,
-                width: 250,
+                height: 296,
+                width: 296,
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
                     Image.asset(
                       "assets/Userget.png",
-                      height: 296,
-                      width: 296,
+                      height: 350,
+                      width: 350,
                       alignment: Alignment.topCenter,
                     ),
                   ],
