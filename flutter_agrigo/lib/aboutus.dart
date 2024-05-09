@@ -5,13 +5,9 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('About Us'),
-        backgroundColor: const Color(0xFF25DA15),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(40.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -26,7 +22,7 @@ class AboutUs extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               "Agrigo is dedicated to revolutionizing the way agricultural products are bought and sold. Our mission is to provide a user-friendly platform that connects farmers, buyers, and sellers, streamlining transactions and promoting fair pricing. With Agrigo, farmers can showcase their products to a wider market, buyers can access a diverse range of agricultural goods, and sellers can efficiently manage their inventory. We are committed to fostering a transparent and efficient marketplace that benefits all stakeholders in the agricultural industry. Join Agrigo today and be part of the future of agriculture.",
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 20),
               textAlign: TextAlign.justify,
             ),
           ],
