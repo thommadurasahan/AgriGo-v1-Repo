@@ -4,7 +4,7 @@ class OthersScreen extends StatefulWidget {
   const OthersScreen({super.key});
 
   @override
-  _OthersScreenState createState() => _OthersScreenState();
+  State<OthersScreen> createState() => _OthersScreenState();
 }
 
 class _OthersScreenState extends State<OthersScreen> {

@@ -4,7 +4,7 @@ class FishScreen extends StatefulWidget {
   const FishScreen({super.key});
 
   @override
-  _FishScreenState createState() => _FishScreenState();
+  State<FishScreen> createState() => _FishScreenState();
 }
 
 class _FishScreenState extends State<FishScreen> {

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/signup_eng.dart';
+import 'package:flutter_agrigo/login_eng.dart';
+import 'package:flutter_agrigo/home_eng.dart';
 
-class GetStart extends StatelessWidget {
-  const GetStart({super.key});
+class GetStartEng extends StatelessWidget {
+  const GetStartEng({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +18,16 @@ class GetStart extends StatelessWidget {
           ),
           child: Column(
             children: [
+              Text("Welcome to AgriGO",
+                  style: TextStyle(
+                    color: Colors.green.shade800,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  )),
+              const Spacer(
+                flex: 56,
+              ),
+              const SizedBox(height: 40),
               SizedBox(
                 height: 250,
                 width: 250,
@@ -30,32 +43,36 @@ class GetStart extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(
-                flex: 56,
-              ),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpEng()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
+                  minimumSize: const Size(296, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
+                  backgroundColor: const Color(0xFF25DA15),
                 ),
                 child: const Text(
                   "REGISTER",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LogInEng()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
+                  minimumSize: const Size(296, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -63,24 +80,25 @@ class GetStart extends StatelessWidget {
                 ),
                 child: const Text(
                   "LOG IN",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const HomeEng()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
+                  minimumSize: const Size(296, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  backgroundColor: const Color(0xFF25DA15),
+                  backgroundColor: const Color.fromARGB(255, 238, 232, 232),
                 ),
                 child: const Text(
                   "SKIP",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
               const Spacer(

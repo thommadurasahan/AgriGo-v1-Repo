@@ -4,7 +4,7 @@ class FruitScreen extends StatefulWidget {
   const FruitScreen({super.key});
 
   @override
-  _FruitScreenState createState() => _FruitScreenState();
+  State<FruitScreen> createState() => _FruitScreenState();
 }
 
 class _FruitScreenState extends State<FruitScreen> {

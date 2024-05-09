@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/get_started_eng.dart';
+import 'package:flutter_agrigo/get_started_sin.dart';
 
 class LanguageSelection extends StatefulWidget {
   const LanguageSelection({super.key});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<LanguageSelection> createState() => _LanguageSelectionState();
 }
 
-class _MenuState extends State<LanguageSelection> {
-  bool isSelectedSwitch1 = false;
+class _LanguageSelectionState extends State<LanguageSelection> {
+  bool isSelectedSwitch1 = true;
   bool isSelectedSwitch2 = false;
 
   @override
@@ -21,7 +23,7 @@ class _MenuState extends State<LanguageSelection> {
           child: Column(
             children: [
               Text(
-                "Select your language",
+                "Select Your Language",
                 style: TextStyle(
                   color: Colors.green.shade800,
                   fontWeight: FontWeight.bold,
@@ -30,13 +32,12 @@ class _MenuState extends State<LanguageSelection> {
               ),
               const Spacer(flex: 48),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: const EdgeInsets.only(left: 22, right: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Default (සිංහල)",
+                      "සිංහල",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     Switch(
@@ -44,6 +45,9 @@ class _MenuState extends State<LanguageSelection> {
                       onChanged: (value) {
                         setState(() {
                           isSelectedSwitch1 = value;
+                          if (value) {
+                            isSelectedSwitch2 = false;
+                          }
                         });
                       },
                       activeTrackColor: const Color(0xFF25DA15),
@@ -54,10 +58,9 @@ class _MenuState extends State<LanguageSelection> {
               ),
               const SizedBox(height: 18),
               Padding(
-                padding: const EdgeInsets.only(left: 23, right: 9),
+                padding: const EdgeInsets.only(left: 22, right: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       "English",
@@ -68,6 +71,9 @@ class _MenuState extends State<LanguageSelection> {
                       onChanged: (value) {
                         setState(() {
                           isSelectedSwitch2 = value;
+                          if (value) {
+                            isSelectedSwitch1 = false;
+                          }
                         });
                       },
                       activeTrackColor: const Color(0xFF25DA15),
@@ -80,18 +86,28 @@ class _MenuState extends State<LanguageSelection> {
               const SizedBox(height: 35),
               ElevatedButton(
                 onPressed: () {
-                  // Add your action here
+                  if (isSelectedSwitch2) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GetStartEng()));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const GetStartSin()));
+                  }
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(350, 50),
+                  minimumSize: const Size(296, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
                 child: const Text(
-                  "Next",
-                  style: TextStyle(color: Colors.white),
+                  "GO",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ],

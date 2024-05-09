@@ -4,7 +4,7 @@ class ImportsScreen extends StatefulWidget {
   const ImportsScreen({super.key});
 
   @override
-  _ImportsScreenState createState() => _ImportsScreenState();
+  State<ImportsScreen> createState() => _ImportsScreenState();
 }
 
 class _ImportsScreenState extends State<ImportsScreen> {
@@ -35,7 +35,7 @@ class _ImportsScreenState extends State<ImportsScreen> {
             // Center the "All Imports" text
             Center(
               child: Text(
-                'All Imports', // Replace with your profile name
+                'All Exports', // Replace with your profile name
                 style: TextStyle(fontSize: 20.0),
               ),
             ),

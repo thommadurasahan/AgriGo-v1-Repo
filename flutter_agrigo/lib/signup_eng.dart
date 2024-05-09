@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_agrigo/firebase_options.dart';
-import 'package:flutter_agrigo/get_started_sin.dart';
+import 'package:flutter_agrigo/get_started_eng.dart';
 
-class SignUpSin extends StatefulWidget {
-  const SignUpSin({super.key});
+class SignUpEng extends StatefulWidget {
+  const SignUpEng({super.key});
 
   @override
-  State<SignUpSin> createState() => _SignUpSinState();
+  State<SignUpEng> createState() => _SignUpEngState();
 }
 
-class _SignUpSinState extends State<SignUpSin> {
+class _SignUpEngState extends State<SignUpEng> {
   // Field controllers for user input
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _numberController = TextEditingController();
@@ -33,24 +33,24 @@ class _SignUpSinState extends State<SignUpSin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Wrap Column with SingleChildScrollView
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 85),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              "නව ගිණුමක් සෑදීම",
+              "Creating a New Profile",
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 22,
               ),
             ),
+            const SizedBox(height: 18),
             const Text(
-              'අප වෙත අලුත් නම් ඔබගේ නම, දුරකථන අංකය, විද්‍යුත් ලිපිනය සහ නව මුරපදයක් ඇතුලත් කර ලියාපදිංචි වන්න.',
+              'If you are new to us, register by providing your name, phone number, email address and a new password.',
               style: TextStyle(
-                fontSize: 16.0,
+                fontSize: 14.0,
                 color: Colors.black,
               ),
             ),
@@ -58,7 +58,8 @@ class _SignUpSinState extends State<SignUpSin> {
             TextField(
               controller: _nameController,
               decoration: const InputDecoration(
-                labelText: 'නම',
+                labelText: 'Name',
+                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Phone Number
@@ -72,7 +73,8 @@ class _SignUpSinState extends State<SignUpSin> {
                 LengthLimitingTextInputFormatter(10)
               ],
               decoration: const InputDecoration(
-                labelText: 'දුරකථන අංකය',
+                labelText: 'Phone Number',
+                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Email
@@ -83,14 +85,16 @@ class _SignUpSinState extends State<SignUpSin> {
               // Set the email keyboard to show the @ sign
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                labelText: 'විද්‍යුත් ලිපිනය',
+                labelText: 'Email',
+                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Password
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(
-                labelText: 'මුරපදය',
+                labelText: 'Password',
+                labelStyle: const TextStyle(fontSize: 12),
                 suffixIcon: IconButton(
                   icon: Icon(
                     // Choose the icon based on password visibility
@@ -112,9 +116,9 @@ class _SignUpSinState extends State<SignUpSin> {
             // Checkbox for Terms and Conditions
             CheckboxListTile(
               title: const Text(
-                'ඔබගේ සේවා කොන්දේසිවලට එකඟ වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දෙමි .',
+                'I agree to your terms of Service and I permit to use of my data.',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 14.0,
                   color: Colors.black,
                 ),
               ),
@@ -145,7 +149,7 @@ class _SignUpSinState extends State<SignUpSin> {
                 backgroundColor: const Color(0xFF25DA15),
               ),
               child: const Text(
-                'ලියාපදිංචි වන්න',
+                'REGISTER',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
@@ -155,7 +159,7 @@ class _SignUpSinState extends State<SignUpSin> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const GetStartSin()));
+                          builder: (context) => const GetStartEng()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(296, 50),
@@ -164,7 +168,7 @@ class _SignUpSinState extends State<SignUpSin> {
                   ),
                   backgroundColor: const Color.fromARGB(255, 238, 232, 232),
                 ),
-                child: const Text('ලියාපදිංචි වීමට අවශ්‍ය නැති ද?')),
+                child: const Text("Don't want to Regiter?")),
           ],
         ),
       ),
