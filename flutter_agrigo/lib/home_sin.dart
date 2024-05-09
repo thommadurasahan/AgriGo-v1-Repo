@@ -37,12 +37,6 @@ class _HomeSinState extends State<HomeSin> {
         title: const Text('AgriGO'),
         actions: [
           IconButton(
-            icon: Image.asset('assets/Compass.png'),
-            onPressed: () {
-              // Handle first icon press action
-            },
-          ),
-          IconButton(
             icon: Image.asset('assets/Switch.png'),
             onPressed: () {
               // Handle second icon press action
@@ -115,7 +109,7 @@ class _HomeSinState extends State<HomeSin> {
             ),
             const SizedBox(height: 16),
             Container(
-              width: 370.0,
+              width: 500.0,
               height: 160.0,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -153,10 +147,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Vegitable.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const VegScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const VegScreen()),
+                          );
                         },
                       ),
                     ),
@@ -168,10 +162,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Fruit.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const FruitScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FruitScreen()),
+                          );
                         },
                       ),
                     ),
@@ -183,10 +177,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Fish.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const FishScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FishScreen()),
+                          );
                         },
                       ),
                     ),
@@ -198,10 +192,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Spices.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const SpicesScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SpicesScreen()),
+                          );
                         },
                       ),
                     ),
@@ -213,10 +207,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Export.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const ImportsScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ImportsScreen()),
+                          );
                         },
                       ),
                     ),
@@ -228,10 +222,10 @@ class _HomeSinState extends State<HomeSin> {
                         imagePath: 'assets/Others.png',
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const OthersScreen()
-                          ),
-                         );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const OthersScreen()),
+                          );
                         },
                       ),
                     ),
