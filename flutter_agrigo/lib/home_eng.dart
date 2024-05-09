@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_agrigo/categories.dart';
+import 'package:flutter_agrigo/export_screen.dart';
+import 'package:flutter_agrigo/fruit_screen.dart';
+import 'package:flutter_agrigo/menu.dart';
+import 'package:flutter_agrigo/notification.dart';
+import 'package:flutter_agrigo/others_screen.dart';
+import 'package:flutter_agrigo/spices_screen.dart';
+import 'package:flutter_agrigo/veg_screen.dart';
 
 const Color agriGoGreen = Color(0xFF25DA15);
 
@@ -143,7 +151,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/VegeE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const VegScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -154,7 +166,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/FruitE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FruitScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -165,7 +181,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/FishE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FruitScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -176,7 +196,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/SpicesE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SpicesScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -187,7 +211,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/ExportsE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ImportsScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -198,7 +226,11 @@ class _HomeEngState extends State<HomeEng> {
                       child: ImageButton(
                         imagePath: 'assets/OthersE.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const OthersScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -239,22 +271,25 @@ class _HomeEngState extends State<HomeEng> {
           });
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HomeEng()),
-              );
+              //Home
               break;
             case 1:
-              // Handle navigation to Categories screen
-              // Replace with your desired navigation logic
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Categories()),
+              );
               break;
             case 2:
-              // Handle navigation to Notifications screen
-              // Replace with your desired navigation logic
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notifications()),
+              );
               break;
             case 3:
-              // Handle navigation to Menu screen
-              // Replace with your desired navigation logic
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Menu()),
+              );
               break;
             default:
               // Handle unexpected index
