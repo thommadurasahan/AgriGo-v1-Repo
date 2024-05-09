@@ -44,14 +44,13 @@ class _SignUpSinState extends State<SignUpSin> {
               style: TextStyle(
                 color: Colors.green.shade800,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 24,
               ),
             ),
-            const SizedBox(height: 18),
             const Text(
               'අප වෙත අලුත් නම් ඔබගේ නම, දුරකථන අංකය, විද්‍යුත් ලිපිනය සහ නව මුරපදයක් ඇතුලත් කර ලියාපදිංචි වන්න.',
               style: TextStyle(
-                fontSize: 12.0,
+                fontSize: 16.0,
                 color: Colors.black,
               ),
             ),
@@ -60,7 +59,6 @@ class _SignUpSinState extends State<SignUpSin> {
               controller: _nameController,
               decoration: const InputDecoration(
                 labelText: 'නම',
-                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Phone Number
@@ -75,7 +73,6 @@ class _SignUpSinState extends State<SignUpSin> {
               ],
               decoration: const InputDecoration(
                 labelText: 'දුරකථන අංකය',
-                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Email
@@ -87,15 +84,13 @@ class _SignUpSinState extends State<SignUpSin> {
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 labelText: 'විද්‍යුත් ලිපිනය',
-                labelStyle: TextStyle(fontSize: 12),
               ),
             ),
             // Enter Password
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(
-                labelText: '',
-                labelStyle: const TextStyle(fontSize: 12),
+                labelText: 'මුරපදය',
                 suffixIcon: IconButton(
                   icon: Icon(
                     // Choose the icon based on password visibility

@@ -27,7 +27,7 @@ class GetStartSin extends StatelessWidget {
               const Spacer(
                 flex: 56,
               ),
-              const SizedBox(height: 40),
+              //const SizedBox(height: 40),
               SizedBox(
                 height: 296,
                 width: 296,
