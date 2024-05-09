@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_agrigo/export_screen.dart';
+import 'package:flutter_agrigo/fish_screen.dart';
+import 'package:flutter_agrigo/fruit_screen.dart';
 import 'package:flutter_agrigo/home_sin.dart';
 import 'package:flutter_agrigo/menu.dart';
 import 'package:flutter_agrigo/notification.dart';
+import 'package:flutter_agrigo/others_screen.dart';
+import 'package:flutter_agrigo/spices_screen.dart';
+import 'package:flutter_agrigo/veg_screen.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});
@@ -47,13 +53,19 @@ class Categories extends StatelessWidget {
               ImageButton(
                 imagePath: 'assets/VegiC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const VegScreen()),
+              );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/FruitC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FruitScreen()),
+              );
                 },
               ),
             ],
@@ -65,13 +77,19 @@ class Categories extends StatelessWidget {
               ImageButton(
                 imagePath: 'assets/FishC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FishScreen()),
+              );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/SpicesC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SpicesScreen()),
+              );
                 },
               ),
             ],
@@ -83,13 +101,19 @@ class Categories extends StatelessWidget {
               ImageButton(
                 imagePath: 'assets/ExportC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ImportsScreen()),
+              );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/OthersC.png',
                 onPressed: () {
-                  // Handle button press action
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const OthersScreen()),
+              );
                 },
               ),
             ],

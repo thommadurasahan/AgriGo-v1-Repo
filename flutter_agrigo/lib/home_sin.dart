@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_agrigo/categories.dart';
+import 'package:flutter_agrigo/export_screen.dart';
+import 'package:flutter_agrigo/fish_screen.dart';
+import 'package:flutter_agrigo/fruit_screen.dart';
 import 'package:flutter_agrigo/menu.dart';
 import 'package:flutter_agrigo/notification.dart';
+import 'package:flutter_agrigo/others_screen.dart';
+import 'package:flutter_agrigo/spices_screen.dart';
+import 'package:flutter_agrigo/veg_screen.dart';
 
 const Color agriGoGreen = Color(0xFF25DA15);
 
@@ -146,7 +152,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Vegitable.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const VegScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -157,7 +167,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Fruit.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FruitScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -168,7 +182,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Fish.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const FishScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -179,7 +197,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Spices.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SpicesScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -190,7 +212,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Export.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ImportsScreen()
+                          ),
+                         );
                         },
                       ),
                     ),
@@ -201,7 +227,11 @@ class _HomeSinState extends State<HomeSin> {
                       child: ImageButton(
                         imagePath: 'assets/Others.png',
                         onPressed: () {
-                          // Handle button press action
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const OthersScreen()
+                          ),
+                         );
                         },
                       ),
                     ),

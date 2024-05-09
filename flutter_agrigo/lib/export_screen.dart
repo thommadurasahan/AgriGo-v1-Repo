@@ -35,7 +35,7 @@ class _ImportsScreenState extends State<ImportsScreen> {
             // Center the "All Imports" text
             Center(
               child: Text(
-                'All Imports', // Replace with your profile name
+                'All Exports', // Replace with your profile name
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
