@@ -1,31 +1,32 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
-
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MapApp(),
+    return const MaterialApp(
+      home: Map(),
     );
   }
 }
 
-class MapApp extends StatefulWidget {
+class Map extends StatefulWidget {
+  const Map({super.key});
+
   @override
-  _MapAppState createState() => _MapAppState();
+  State<Map> createState() => _MapAppState();
 }
 
-class _MapAppState extends State<MapApp> {
+class _MapAppState extends State<Map> {
   double long = 49.5;
   double lat = -0.09;
-  LatLng point = LatLng(49.5, -0.09);
+  var point = LatLng(49.5, -0.09);
   var location = [];
 
   @override
@@ -35,17 +36,13 @@ class _MapAppState extends State<MapApp> {
         FlutterMap(
           options: MapOptions(
             onTap: (p) async {
-              var Geocoder;
-              location = await Geocoder.local.findAddressesFromCoordinates(
-                  newMethod(p));
+              dynamic geocoder;
+              location = await geocoder.local
+                  .findAddressesFromCoordinates(newMethod(p));
 
               setState(() {
                 point = p;
-                print(p);
               });
-
-              print(
-                  "${location.first.countryName} - ${location.first.featureName}");
             },
             center: LatLng(49.5, -0.09),
             zoom: 5.0,
@@ -61,11 +58,9 @@ class _MapAppState extends State<MapApp> {
                   width: 80.0,
                   height: 80.0,
                   point: point,
-                  builder: (ctx) => Container(
-                    child: Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                    ),
+                  builder: (ctx) => const Icon(
+                    Icons.location_on,
+                    color: Colors.red,
                   ),
                 )
               ],
@@ -73,11 +68,11 @@ class _MapAppState extends State<MapApp> {
           ],
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 34.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 34.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Card(
+              const Card(
                 child: TextField(
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(16.0),
@@ -107,25 +102,24 @@ class _MapAppState extends State<MapApp> {
   Coordinates newMethod(p) => Coordinates(p.latitude, p.longitude);
 }
 
-MapOptions({required Future<Null> Function(dynamic p) onTap, required LatLng center, required double zoom}) {
-}
+mapOptions(
+    {required Future<Null> Function(dynamic p) onTap,
+    required LatLng center,
+    required double zoom}) {}
 
-MarkerLayerOptions({required List markers}) {
-}
+markerLayerOptions({required List markers}) {}
 
-TileLayerOptions({required String urlTemplate, required List<String> subdomains}) {
-}
+tileLayerOptions(
+    {required String urlTemplate, required List<String> subdomains}) {}
 
-Marker({required double width, required double height, required LatLng point, required Container Function(dynamic ctx) builder}) {
-}
+marker(
+    {required double width,
+    required double height,
+    required LatLng point,
+    required Container Function(dynamic ctx) builder}) {}
 
-mixin LatLng {
-}
+mixin LatLng {}
 
-lating(double d, double e) {
-}
+lating(double d, double e) {}
 
-FlutterMap({required options, required List<dynamic> layers}) {
-}
-
-
+flutterMap({required options, required List<dynamic> layers}) {}

@@ -137,7 +137,8 @@ class _HomeEngState extends State<HomeEng> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius:
-                    BorderRadius.circular(10.0), // Adjust corner radius
+                    // Adjust corner radius
+                    BorderRadius.circular(10.0),
               ),
               child: const Stack(
                 // To position the "Pins" on top of the box
@@ -207,7 +208,7 @@ class _HomeEngState extends State<HomeEng> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const FruitScreen()),
+                                builder: (context) => const FishScreen()),
                           );
                         },
                       ),
