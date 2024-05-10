@@ -41,6 +41,7 @@ class _HomeSinState extends State<HomeSin> {
       appBar: AppBar(
         // Logo
         title: const Text('AgriGO'),
+
         // Language Change Option
         actions: [
           IconButton(
@@ -54,11 +55,11 @@ class _HomeSinState extends State<HomeSin> {
             },
           ),
         ],
+
         // App Bar Color
         backgroundColor: agriGoGreen,
       ),
 
-      // The Body
       body: SingleChildScrollView(
         // Wrap the content with SingleChildScrollView
         child: Column(
