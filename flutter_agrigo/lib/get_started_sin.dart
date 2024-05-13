@@ -61,6 +61,7 @@ class GetStartSin extends StatelessWidget {
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),
+
               const SizedBox(height: 16),
 
               // LogIn Button
@@ -83,6 +84,7 @@ class GetStartSin extends StatelessWidget {
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),
+
               const SizedBox(height: 16),
 
               // Skip Button

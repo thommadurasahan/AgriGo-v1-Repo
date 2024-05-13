@@ -21,7 +21,7 @@ class GetStartEng extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.green.shade800,
                     fontWeight: FontWeight.bold,
-                    fontSize: 36,
+                    fontSize: 40,
                   )),
 
               // Space between title and image
@@ -58,7 +58,10 @@ class GetStartEng extends StatelessWidget {
                 ),
                 child: const Text(
                   "REGISTER",
-                  style: TextStyle(fontSize: 26, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
               const SizedBox(height: 16),
@@ -80,7 +83,10 @@ class GetStartEng extends StatelessWidget {
                 ),
                 child: const Text(
                   "LOG IN",
-                  style: TextStyle(fontSize: 26, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
               const SizedBox(height: 16),
@@ -100,7 +106,10 @@ class GetStartEng extends StatelessWidget {
                 ),
                 child: const Text(
                   "SKIP",
-                  style: TextStyle(fontSize: 26, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ),
             ],

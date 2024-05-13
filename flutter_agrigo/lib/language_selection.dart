@@ -119,7 +119,10 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 ),
                 child: const Text(
                   "GO",
-                  style: TextStyle(fontSize: 32, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
             ],
