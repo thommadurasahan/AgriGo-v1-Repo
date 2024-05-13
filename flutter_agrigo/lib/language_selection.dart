@@ -18,8 +18,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          width: 429,
-          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 85),
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
           child: Column(
             children: [
               Text(
@@ -27,18 +26,22 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 style: TextStyle(
                   color: Colors.green.shade800,
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: 40,
                 ),
               ),
-              const Spacer(flex: 48),
+
+              // Space between title and options
+              const Spacer(flex: 50),
+
+              // Sinhala language selection option
               Padding(
-                padding: const EdgeInsets.only(left: 22, right: 16),
+                padding: const EdgeInsets.only(left: 22, right: 22),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
                       "සිංහල",
-                      style: TextStyle(fontSize: 20, color: Colors.black),
+                      style: TextStyle(fontSize: 32, color: Colors.black),
                     ),
                     Switch(
                       value: isSelectedSwitch1,
@@ -47,6 +50,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                           isSelectedSwitch1 = value;
                           if (value) {
                             isSelectedSwitch2 = false;
+                            isSelectedSwitch1 = true;
                           }
                         });
                       },
@@ -56,15 +60,19 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   ],
                 ),
               ),
-              const SizedBox(height: 18),
+
+              // Space between options and button
+              const SizedBox(height: 16),
+
+              // English language selection option
               Padding(
-                padding: const EdgeInsets.only(left: 22, right: 16),
+                padding: const EdgeInsets.only(left: 22, right: 22),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
                       "English",
-                      style: TextStyle(fontSize: 20, color: Colors.black),
+                      style: TextStyle(fontSize: 32, color: Colors.black),
                     ),
                     Switch(
                       value: isSelectedSwitch2,
@@ -73,6 +81,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                           isSelectedSwitch2 = value;
                           if (value) {
                             isSelectedSwitch1 = false;
+                            isSelectedSwitch2 = true;
                           }
                         });
                       },
@@ -82,8 +91,9 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   ],
                 ),
               ),
-              const Spacer(flex: 51),
-              const SizedBox(height: 35),
+              const Spacer(flex: 50),
+
+              // GO Button
               ElevatedButton(
                 onPressed: () {
                   if (isSelectedSwitch2) {
@@ -99,7 +109,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(296, 50),
+                  minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -107,7 +117,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 ),
                 child: const Text(
                   "GO",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 32, color: Colors.white),
                 ),
               ),
             ],
