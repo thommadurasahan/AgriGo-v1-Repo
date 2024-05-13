@@ -19,6 +19,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
       home: Scaffold(
         body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
+
+          // Column
           child: Column(
             children: [
               Text(
@@ -26,7 +28,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 style: TextStyle(
                   color: Colors.green.shade800,
                   fontWeight: FontWeight.bold,
-                  fontSize: 40,
+                  fontSize: 36,
                 ),
               ),
 

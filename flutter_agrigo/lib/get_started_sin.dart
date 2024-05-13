@@ -12,38 +12,36 @@ class GetStartSin extends StatelessWidget {
       home: Scaffold(
         body: Container(
           width: double.maxFinite,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 26,
-            vertical: 72,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
+
+          // Column
           child: Column(
             children: [
               Text("AgriGO වෙත පිළිගන්නෙමු",
                   style: TextStyle(
                     color: Colors.green.shade800,
                     fontWeight: FontWeight.bold,
-                    fontSize: 24,
+                    fontSize: 34,
                   )),
+
+              // Space between title and image
               const Spacer(
-                flex: 56,
+                flex: 60,
               ),
-              //const SizedBox(height: 40),
-              SizedBox(
-                height: 296,
-                width: 296,
-                child: Stack(
-                  alignment: Alignment.topCenter,
-                  children: [
-                    Image.asset(
-                      "assets/Userget.png",
-                      height: 350,
-                      width: 350,
-                      alignment: Alignment.topCenter,
-                    ),
-                  ],
-                ),
+
+              // Profile image
+              Image.asset(
+                "assets/Userget.png",
+                height: 700,
+                width: 700,
               ),
-              const SizedBox(height: 40),
+
+              // Space between image and buttons
+              const Spacer(
+                flex: 60,
+              ),
+
+              // Register Button
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -52,7 +50,7 @@ class GetStartSin extends StatelessWidget {
                           builder: (context) => const SignUpSin()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(296, 50),
+                  minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -60,10 +58,12 @@ class GetStartSin extends StatelessWidget {
                 ),
                 child: const Text(
                   "ලියාපදිංචි වන්න",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),
               const SizedBox(height: 16),
+
+              // LogIn Button
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -72,7 +72,7 @@ class GetStartSin extends StatelessWidget {
                           builder: (context) => const LogInSin()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(296, 50),
+                  minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -80,17 +80,19 @@ class GetStartSin extends StatelessWidget {
                 ),
                 child: const Text(
                   "නැවත ඇතුළු වන්න",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
               ),
               const SizedBox(height: 16),
+
+              // Skip Button
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const HomeSin()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(296, 50),
+                  minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -98,7 +100,7 @@ class GetStartSin extends StatelessWidget {
                 ),
                 child: const Text(
                   "මඟ හරින්න",
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
               ),
               const Spacer(
