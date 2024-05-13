@@ -34,13 +34,10 @@ class _SignUpSinState extends State<SignUpSin> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        //padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
-
         // Column
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
           child: Column(
-            //padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
@@ -59,14 +56,9 @@ class _SignUpSinState extends State<SignUpSin> {
                 'අප වෙත අලුත් නම් ඔබගේ නම, දුරකථන අංකය, විද්‍යුත් ලිපිනය සහ නව මුරපදයක් ඇතුලත් කර ලියාපදිංචි වන්න.',
                 style: TextStyle(
                   fontSize: 18.0,
-                  //fontStyle:,
                   color: Colors.black,
                 ),
               ),
-
-              /*const Spacer(
-                flex: 1,
-              ),*/
 
               const SizedBox(height: 60),
 

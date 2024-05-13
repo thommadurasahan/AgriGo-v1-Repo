@@ -12,7 +12,7 @@ class GetStartEng extends StatelessWidget {
       home: Scaffold(
         body: Container(
           width: double.maxFinite,
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 100),
 
           // Column
           child: Column(
@@ -64,6 +64,7 @@ class GetStartEng extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
+
               const SizedBox(height: 16),
 
               // LogIn Button
@@ -89,6 +90,7 @@ class GetStartEng extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
+
               const SizedBox(height: 16),
 
               // Skip Button
