@@ -100,11 +100,8 @@ class GetStartSin extends StatelessWidget {
                 ),
                 child: const Text(
                   "මඟ හරින්න",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  style: TextStyle(fontSize: 24, color: Colors.black),
                 ),
-              ),
-              const Spacer(
-                flex: 43,
               ),
             ],
           ),
