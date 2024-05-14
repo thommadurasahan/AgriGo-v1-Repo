@@ -51,14 +51,14 @@ class _LogInSinState extends State<LogInSin> {
                 ),
               ),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 60),
 
               const CircleAvatar(
                 radius: 150.0,
                 backgroundImage: AssetImage('assets/Userget.png'),
               ),
 
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 60),
 
               // Enter Email
               Padding(
@@ -107,7 +107,7 @@ class _LogInSinState extends State<LogInSin> {
                 ),
               ),
 
-              const SizedBox(height: 50),
+              const SizedBox(height: 80),
 
               // LOG IN Button
               ElevatedButton(
@@ -129,6 +129,7 @@ class _LogInSinState extends State<LogInSin> {
               ),
               const SizedBox(height: 16),
 
+              // Skip Button
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
