@@ -16,15 +16,11 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF25DA15),
+
+      // The App Bar
       appBar: AppBar(
         title: const Text('AgriGO'),
         actions: [
-          IconButton(
-            icon: Image.asset('assets/Compass.png'),
-            onPressed: () {
-              // Handle first icon press action
-            },
-          ),
           IconButton(
             icon: Image.asset('assets/Switch.png'),
             onPressed: () {
@@ -54,18 +50,19 @@ class Categories extends StatelessWidget {
                 imagePath: 'assets/VegiC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const VegScreen()),
-              );
+                    context,
+                    MaterialPageRoute(builder: (context) => const VegScreen()),
+                  );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/FruitC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FruitScreen()),
-              );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FruitScreen()),
+                  );
                 },
               ),
             ],
@@ -78,18 +75,19 @@ class Categories extends StatelessWidget {
                 imagePath: 'assets/FishC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FishScreen()),
-              );
+                    context,
+                    MaterialPageRoute(builder: (context) => const FishScreen()),
+                  );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/SpicesC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SpicesScreen()),
-              );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SpicesScreen()),
+                  );
                 },
               ),
             ],
@@ -102,18 +100,20 @@ class Categories extends StatelessWidget {
                 imagePath: 'assets/ExportC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ImportsScreen()),
-              );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ImportsScreen()),
+                  );
                 },
               ),
               ImageButton(
                 imagePath: 'assets/OthersC.png',
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const OthersScreen()),
-              );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OthersScreen()),
+                  );
                 },
               ),
             ],
