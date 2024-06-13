@@ -23,6 +23,12 @@ class _SignUpSinState extends State<SignUpSin> {
 
   bool _obscureText = true;
 
+  // Define ValueNotifiers for the form fields
+  final ValueNotifier<bool> isNameFilled = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isNumberFilled = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isEmailFilled = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isPasswordFilled = ValueNotifier<bool>(false);
+
   @override
   void dispose() {
     _nameController.dispose();
@@ -74,6 +80,10 @@ class _SignUpSinState extends State<SignUpSin> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: TextField(
+                          // Notify the ValueNotifier when the text changes
+                          onChanged: (value) {
+                            isNameFilled.value = value.isNotEmpty;
+                          },
                           controller: _nameController,
                           decoration: const InputDecoration(
                             labelText: 'නම',
@@ -89,6 +99,10 @@ class _SignUpSinState extends State<SignUpSin> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: TextField(
+                          // Notify the ValueNotifier when the text changes
+                          onChanged: (value) {
+                            isNumberFilled.value = value.isNotEmpty;
+                          },
                           controller: _numberController,
                           // Set the phone number keyboard to show the number pad
                           //keyboardType: TextInputType.phone,
@@ -111,6 +125,10 @@ class _SignUpSinState extends State<SignUpSin> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: TextField(
+                          // Notify the ValueNotifier when the text changes
+                          onChanged: (value) {
+                            isEmailFilled.value = value.isNotEmpty;
+                          },
                           controller: _emailController,
                           enableSuggestions: false,
                           autocorrect: false,
@@ -155,6 +173,10 @@ class _SignUpSinState extends State<SignUpSin> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: TextField(
+                          // Notify the ValueNotifier when the text changes
+                          onChanged: (value) {
+                            isPasswordFilled.value = value.isNotEmpty;
+                          },
                           controller: _passwordController,
                           decoration: InputDecoration(
                             labelText: 'මුරපදය',
@@ -202,14 +224,21 @@ class _SignUpSinState extends State<SignUpSin> {
 
                       // Sign Up Button
                       ElevatedButton(
-                        onPressed: () async {
-                          final email = _emailController.text;
-                          final password = _passwordController.text;
+                        onPressed: isNameFilled.value &&
+                                isNumberFilled.value &&
+                                isEmailFilled.value &&
+                                isPasswordFilled.value &&
+                                _agreedToTerms
+                            ? () async {
+                                final email = _emailController.text;
+                                final password = _passwordController.text;
 
-                          await FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                                  email: email, password: password);
-                        },
+                                await FirebaseAuth.instance
+                                    .createUserWithEmailAndPassword(
+                                        email: email, password: password);
+                                // Disable the button if the fields are empty
+                              }
+                            : null,
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(400, 60),
                           shape: RoundedRectangleBorder(
