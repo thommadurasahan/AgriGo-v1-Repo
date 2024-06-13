@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package.:flutter/material.dart';
 
 class AboutUs extends StatelessWidget {
   const AboutUs({super.key});
