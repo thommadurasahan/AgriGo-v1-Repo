@@ -19,8 +19,6 @@ class _SignUpSinState extends State<SignUpSin> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  bool _agreedToTerms = false;
-
   bool _obscureText = true;
 
   // Define ValueNotifiers for the form fields
@@ -28,11 +26,13 @@ class _SignUpSinState extends State<SignUpSin> {
   final ValueNotifier<bool> isNumberFilled = ValueNotifier<bool>(false);
   final ValueNotifier<bool> isEmailFilled = ValueNotifier<bool>(false);
   final ValueNotifier<bool> isPasswordFilled = ValueNotifier<bool>(false);
+  bool _agreedToTerms = false;
 
   final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
+    //Disposing field Controllers
     _nameController.dispose();
     _numberController.dispose();
     _emailController.dispose();
@@ -47,14 +47,19 @@ class _SignUpSinState extends State<SignUpSin> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 100),
           child: FutureBuilder(
+            // Initialize Firebase
             future: Firebase.initializeApp(
               options: DefaultFirebaseOptions.currentPlatform,
             ),
+
+            // Build the form based on the state of Firebase
             builder: (context, snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.done:
                   return Form(
                     key: _formKey,
+
+                    // Column
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -80,29 +85,54 @@ class _SignUpSinState extends State<SignUpSin> {
 
                         const SizedBox(height: 60),
 
-                        // Enter Name
+                        // Name entering field
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextField(
-                            // Notify the ValueNotifier when the text changes
-                            onChanged: (value) {
-                              isNameFilled.value = value.isNotEmpty;
-                            },
                             controller: _nameController,
+
                             decoration: const InputDecoration(
                               labelText: 'නම',
                               labelStyle: TextStyle(fontSize: 20),
                               icon: Icon(Icons.person, size: 30),
                             ),
+
+                            // Notify the ValueNotifier when the text changes
+                            onChanged: (value) {
+                              isNameFilled.value = value.isNotEmpty;
+                            },
                           ),
                         ),
 
                         const SizedBox(height: 36),
 
-                        // Enter Phone Number
+                        // Phone Number entering field
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
+                            controller: _numberController,
+
+                            decoration: const InputDecoration(
+                              labelText: 'දුරකථන අංකය',
+                              labelStyle: TextStyle(fontSize: 20),
+                              hintText: '(+94) 0xxxxxxxxx',
+                              icon: Icon(Icons.phone, size: 30),
+                            ),
+
+                            // Set the phone number keyboard to show the number pad
+                            //keyboardType: TextInputType.phone
+
+                            // Only allow numbers
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                              LengthLimitingTextInputFormatter(10)
+                            ],
+
+                            // Notify the ValueNotifier when the text changes
+                            onChanged: (value) {
+                              isNumberFilled.value = value.isNotEmpty;
+                            },
+
                             // Validate the phone number
                             validator: (value) {
                               if (value == null ||
@@ -112,33 +142,35 @@ class _SignUpSinState extends State<SignUpSin> {
                               }
                               return null;
                             },
-                            // Notify the ValueNotifier when the text changes
-                            onChanged: (value) {
-                              isNumberFilled.value = value.isNotEmpty;
-                            },
-                            controller: _numberController,
-                            // Set the phone number keyboard to show the number pad
-                            //keyboardType: TextInputType.phone,
-                            // Only allow numbers
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                              LengthLimitingTextInputFormatter(10)
-                            ],
-                            decoration: const InputDecoration(
-                              labelText: 'දුරකථන අංකය',
-                              labelStyle: TextStyle(fontSize: 20),
-                              hintText: '(+94) 0xxxxxxxxx',
-                              icon: Icon(Icons.phone, size: 30),
-                            ),
                           ),
                         ),
 
                         const SizedBox(height: 24),
 
-                        // Enter Email
+                        // Email address entering field
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
+                            controller: _emailController,
+
+                            decoration: const InputDecoration(
+                              labelText: 'විද්‍යුත් ලිපිනය',
+                              labelStyle: TextStyle(fontSize: 20),
+                              hintText: '@gmail.com',
+                              icon: Icon(Icons.email, size: 30),
+                            ),
+
+                            // Set the email keyboard to show the @ sign
+                            keyboardType: TextInputType.emailAddress,
+
+                            enableSuggestions: false,
+                            autocorrect: false,
+
+                            // Notify the ValueNotifier when the text changes
+                            onChanged: (value) {
+                              isEmailFilled.value = value.isNotEmpty;
+                            },
+
                             // Validate the email address
                             validator: (value) {
                               if (value == null ||
@@ -148,51 +180,38 @@ class _SignUpSinState extends State<SignUpSin> {
                               }
                               return null;
                             },
-                            // Notify the ValueNotifier when the text changes
-                            onChanged: (value) {
-                              isEmailFilled.value = value.isNotEmpty;
-                            },
-                            controller: _emailController,
-                            enableSuggestions: false,
-                            autocorrect: false,
-                            // Set the email keyboard to show the @ sign
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: const InputDecoration(
-                              labelText: 'විද්‍යුත් ලිපිනය',
-                              labelStyle: TextStyle(fontSize: 20),
-                              hintText: '@gmail.com',
-                              icon: Icon(Icons.email, size: 30),
-                            ),
                           ),
                         ),
 
                         const SizedBox(height: 36),
 
                         /*// Email Confirmation
-                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const GetStartSin()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(400, 60),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        backgroundColor: const Color(0xFF25DA15),
-                      ),
-                      child: const Text(
-                        'විද්‍යුත් ලිපිනය තහවුරු කරන්න',
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )),
-                                
-                      const SizedBox(height: 24),*/
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const GetStartSin()));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(400, 60),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              backgroundColor: const Color(0xFF25DA15),
+                            ),
+                            child: const Text(
+                              'විද්‍යුත් ලිපිනය තහවුරු කරන්න',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            )),
 
+                        const SizedBox(height: 24),*/
+
+                        // Informing password requirements
                         const Padding(
                           padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: Text(
@@ -206,15 +225,53 @@ class _SignUpSinState extends State<SignUpSin> {
 
                         const SizedBox(height: 16),
 
-                        // Enter Password
+                        // Password entering field
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
+                            controller: _passwordController,
+
+                            decoration: InputDecoration(
+                              labelText: 'මුරපදය',
+                              labelStyle: const TextStyle(fontSize: 20),
+                              icon: const Icon(Icons.password, size: 30),
+
+                              // Choose the icon based on password visibility
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _obscureText
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+
+                                // Toggle the state of password visibility
+                                onPressed: () {
+                                  setState(() {
+                                    _obscureText = !_obscureText;
+                                  });
+                                },
+                              ),
+                            ),
+
+                            // Hidding the password
+                            obscureText: _obscureText,
+
+                            enableSuggestions: false,
+                            autocorrect: false,
+
+                            // Notify the ValueNotifier when the text changes
+                            onChanged: (value) {
+                              isPasswordFilled.value = value.isNotEmpty;
+                            },
+
                             // Validate the password
                             validator: (value) {
+                              // Password must have at least one uppercase letter, one lowercase letter, one number and one symbol
                               String pattern =
                                   r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+
                               RegExp regex = RegExp(pattern);
+
                               if (value == null ||
                                   value.isEmpty ||
                                   value.length < 8 ||
@@ -224,33 +281,6 @@ class _SignUpSinState extends State<SignUpSin> {
                                 return null;
                               }
                             },
-                            // Notify the ValueNotifier when the text changes
-                            onChanged: (value) {
-                              isPasswordFilled.value = value.isNotEmpty;
-                            },
-                            controller: _passwordController,
-                            decoration: InputDecoration(
-                              labelText: 'මුරපදය',
-                              labelStyle: const TextStyle(fontSize: 20),
-                              icon: const Icon(Icons.password, size: 30),
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  // Choose the icon based on password visibility
-                                  _obscureText
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                ),
-                                onPressed: () {
-                                  // Toggle the state of password visibility
-                                  setState(() {
-                                    _obscureText = !_obscureText;
-                                  });
-                                },
-                              ),
-                            ),
-                            obscureText: _obscureText,
-                            enableSuggestions: false,
-                            autocorrect: false,
                           ),
                         ),
 
@@ -258,6 +288,7 @@ class _SignUpSinState extends State<SignUpSin> {
 
                         // Checkbox for Terms and Conditions
                         CheckboxListTile(
+                          value: _agreedToTerms,
                           title: const Text(
                             'ඔබගේ සේවා කොන්දේසිවලට එකඟ වන අතර මාගේ දත්ත භාවිතා කිරීමට කැමැත්ත ලබා දෙමි.',
                             style: TextStyle(
@@ -265,7 +296,8 @@ class _SignUpSinState extends State<SignUpSin> {
                               color: Colors.black,
                             ),
                           ),
-                          value: _agreedToTerms,
+
+                          // Set state according to the bool value
                           onChanged: (value) =>
                               setState(() => _agreedToTerms = value!),
                           activeColor: const Color(0xFF25DA15),
@@ -286,6 +318,7 @@ class _SignUpSinState extends State<SignUpSin> {
                                     final email = _emailController.text;
                                     final password = _passwordController.text;
 
+                                    // Create a new user
                                     await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
                                             email: email, password: password);
@@ -335,6 +368,8 @@ class _SignUpSinState extends State<SignUpSin> {
                       ],
                     ),
                   );
+
+                // Indicate loading until firebase get initilized
                 default:
                   return const CircularProgressIndicator();
               }

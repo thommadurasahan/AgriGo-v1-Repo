@@ -1,4 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_agrigo/firebase_options.dart';
 import 'package:flutter_agrigo/get_started_sin.dart';
 
 class LogInSin extends StatefulWidget {
@@ -14,6 +17,12 @@ class _LogInSinState extends State<LogInSin> {
   final TextEditingController _passwordController = TextEditingController();
 
   bool _obscureText = true;
+
+  // Define ValueNotifiers for the form fields
+  final ValueNotifier<bool> isEmailFilled = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isPasswordFilled = ValueNotifier<bool>(false);
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
