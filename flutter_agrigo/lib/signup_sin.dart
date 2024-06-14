@@ -127,13 +127,13 @@ class _SignUpSinState extends State<SignUpSin> {
                             decoration: const InputDecoration(
                               labelText: 'දුරකථන අංකය',
                               labelStyle: TextStyle(fontSize: 20),
-                              hintText: 'Format: (+94) 0xxxxxxxxx',
+                              hintText: '(+94) 0xxxxxxxxx',
                               icon: Icon(Icons.phone, size: 30),
                             ),
                           ),
                         ),
 
-                        const SizedBox(height: 60),
+                        const SizedBox(height: 24),
 
                         // Enter Email
                         Padding(
@@ -160,7 +160,7 @@ class _SignUpSinState extends State<SignUpSin> {
                             decoration: const InputDecoration(
                               labelText: 'විද්‍යුත් ලිපිනය',
                               labelStyle: TextStyle(fontSize: 20),
-                              hintText: 'Format: xxx@gmail.com',
+                              hintText: '@gmail.com',
                               icon: Icon(Icons.email, size: 30),
                             ),
                           ),
@@ -193,18 +193,36 @@ class _SignUpSinState extends State<SignUpSin> {
                                 
                       const SizedBox(height: 24),*/
 
+                        const Padding(
+                          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Text(
+                            'Password must have at least one uppercase letter, one lowercase letter, one number and one symbol',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(height: 16),
+
                         // Enter Password
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                           child: TextFormField(
                             // Validate the password
                             validator: (value) {
+                              String pattern =
+                                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+                              RegExp regex = RegExp(pattern);
                               if (value == null ||
                                   value.isEmpty ||
-                                  value.length < 8) {
-                                return 'කරුණාකර අංක සහ අකුරු මුරපදයක් ඇතුලත් කරන්න';
+                                  value.length < 8 ||
+                                  !regex.hasMatch(value)) {
+                                return 'කරුණාකර නිවැරැදි මුරපදයක් ඇතුලත් කරන්න';
+                              } else {
+                                return null;
                               }
-                              return null;
                             },
                             // Notify the ValueNotifier when the text changes
                             onChanged: (value) {
@@ -214,8 +232,6 @@ class _SignUpSinState extends State<SignUpSin> {
                             decoration: InputDecoration(
                               labelText: 'මුරපදය',
                               labelStyle: const TextStyle(fontSize: 20),
-                              hintText:
-                                  'Include numbers, symbols, capital and simple letters',
                               icon: const Icon(Icons.password, size: 30),
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -238,7 +254,7 @@ class _SignUpSinState extends State<SignUpSin> {
                           ),
                         ),
 
-                        const SizedBox(height: 60),
+                        const SizedBox(height: 24),
 
                         // Checkbox for Terms and Conditions
                         CheckboxListTile(
