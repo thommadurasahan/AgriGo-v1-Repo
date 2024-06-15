@@ -332,6 +332,13 @@ class _SignUpSinState extends State<SignUpSin> {
                                     await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
                                             email: email, password: password);
+
+                                    // Show a success message
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content:
+                                              Text('Registration Successful')),
+                                    );
                                   }
                                   // Disable the button if the fields are empty
                                 }
