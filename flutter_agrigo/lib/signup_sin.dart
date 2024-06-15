@@ -42,6 +42,7 @@ class _SignUpSinState extends State<SignUpSin> {
 
   @override
   Widget build(BuildContext context) {
+    // Scaffold
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -54,8 +55,12 @@ class _SignUpSinState extends State<SignUpSin> {
 
             // Build the form based on the state of Firebase
             builder: (context, snapshot) {
+              // Handle firebase initialization errors
               switch (snapshot.connectionState) {
+                // If firebase is initialized
                 case ConnectionState.done:
+
+                  // Form
                   return Form(
                     key: _formKey,
 
@@ -91,6 +96,7 @@ class _SignUpSinState extends State<SignUpSin> {
                           child: TextField(
                             controller: _nameController,
 
+                            // Set the name controller
                             decoration: const InputDecoration(
                               labelText: 'නම',
                               labelStyle: TextStyle(fontSize: 20),
@@ -112,6 +118,7 @@ class _SignUpSinState extends State<SignUpSin> {
                           child: TextFormField(
                             controller: _numberController,
 
+                            // Set the phonenumber controller
                             decoration: const InputDecoration(
                               labelText: 'දුරකථන අංකය',
                               labelStyle: TextStyle(fontSize: 20),
@@ -153,6 +160,7 @@ class _SignUpSinState extends State<SignUpSin> {
                           child: TextFormField(
                             controller: _emailController,
 
+                            // Set the email controller
                             decoration: const InputDecoration(
                               labelText: 'විද්‍යුත් ලිපිනය',
                               labelStyle: TextStyle(fontSize: 20),
@@ -176,7 +184,7 @@ class _SignUpSinState extends State<SignUpSin> {
                               if (value == null ||
                                   value.isEmpty ||
                                   !value.contains('@gmail.com')) {
-                                return 'කරුණාකර වලංගු gmail විද්‍යුත් ලිපිනයක් ඇතුලත් කරන්න';
+                                return 'කරුණාකර වලංගු gmail ලිපිනයක් ඇතුලත් කරන්න';
                               }
                               return null;
                             },
@@ -231,13 +239,15 @@ class _SignUpSinState extends State<SignUpSin> {
                           child: TextFormField(
                             controller: _passwordController,
 
+                            // Set the password controller
                             decoration: InputDecoration(
                               labelText: 'මුරපදය',
                               labelStyle: const TextStyle(fontSize: 20),
                               icon: const Icon(Icons.password, size: 30),
 
-                              // Choose the icon based on password visibility
+                              // Set the password visibility
                               suffixIcon: IconButton(
+                                // Choose the icon based on password visibility
                                 icon: Icon(
                                   _obscureText
                                       ? Icons.visibility
@@ -253,7 +263,7 @@ class _SignUpSinState extends State<SignUpSin> {
                               ),
                             ),
 
-                            // Hidding the password
+                            // Hide the password
                             obscureText: _obscureText,
 
                             enableSuggestions: false,
@@ -326,6 +336,8 @@ class _SignUpSinState extends State<SignUpSin> {
                                   // Disable the button if the fields are empty
                                 }
                               : null,
+
+                          // Button styles
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(400, 60),
                             shape: RoundedRectangleBorder(
@@ -333,6 +345,8 @@ class _SignUpSinState extends State<SignUpSin> {
                             ),
                             backgroundColor: const Color(0xFF25DA15),
                           ),
+
+                          // Button text
                           child: const Text(
                             'ලියාපදිංචි වන්න',
                             style: TextStyle(
@@ -344,6 +358,7 @@ class _SignUpSinState extends State<SignUpSin> {
 
                         const SizedBox(height: 16),
 
+                        // Skip Button
                         ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -352,6 +367,8 @@ class _SignUpSinState extends State<SignUpSin> {
                                       builder: (context) =>
                                           const GetStartSin()));
                             },
+
+                            // Button styles
                             style: ElevatedButton.styleFrom(
                               minimumSize: const Size(400, 60),
                               shape: RoundedRectangleBorder(
@@ -360,6 +377,8 @@ class _SignUpSinState extends State<SignUpSin> {
                               backgroundColor:
                                   const Color.fromARGB(255, 238, 232, 232),
                             ),
+
+                            // Button text
                             child: const Text(
                               'ලියාපදිංචි වීමට අවශ්‍ය නැති ද?',
                               style: TextStyle(
@@ -369,7 +388,7 @@ class _SignUpSinState extends State<SignUpSin> {
                     ),
                   );
 
-                // Indicate loading until firebase get initilized
+                // Indicate loading until firebase get initialized
                 default:
                   return const CircularProgressIndicator();
               }
