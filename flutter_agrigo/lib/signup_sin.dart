@@ -32,7 +32,7 @@ class _SignUpSinState extends State<SignUpSin> {
 
   @override
   void dispose() {
-    //Disposing field Controllers
+    // Dispose field Controllers
     _nameController.dispose();
     _numberController.dispose();
     _emailController.dispose();
@@ -74,7 +74,7 @@ class _SignUpSinState extends State<SignUpSin> {
 
                         const SizedBox(height: 60),
 
-                        // Guiding text
+                        // Guide text
                         const Text(
                           'අප වෙත අලුත් නම් ඔබගේ නම, දුරකථන අංකය, විද්‍යුත් ලිපිනය සහ නව මුරපදයක් ඇතුලත් කර ලියාපදිංචි වන්න.',
                           style: TextStyle(
