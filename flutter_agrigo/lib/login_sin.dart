@@ -246,7 +246,16 @@ class _LogInSinState extends State<LogInSin> {
 
                 // Indicate loading until firebase get initialized
                 default:
-                  return const CircularProgressIndicator();
+                  return Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: const Center(
+                      child: CircularProgressIndicator(
+                        color: Colors.green,
+                      ),
+                    ),
+                  );
               }
             },
           ),
