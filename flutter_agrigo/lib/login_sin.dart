@@ -212,7 +212,6 @@ class _LogInSinState extends State<LogInSin> {
                                 color: Colors.white),
                           ),
                         ),
-
                         const SizedBox(height: 16),
 
                         // Skip Button
