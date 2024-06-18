@@ -12,6 +12,7 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
+
     // Add a delay if needed before navigating
     Future.delayed(const Duration(seconds: 3), () {
       // Navigate to the language selection screen
@@ -26,8 +27,12 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
+        // Set the background color to green
         backgroundColor: Color(0xFF25DA15),
+
+        // Center the Logo
         body: Center(
+          // Add the Logo image
           child: Image(
             image: AssetImage('assets/Logo.png'),
             width: 150,
