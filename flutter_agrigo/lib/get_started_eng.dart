@@ -17,6 +17,7 @@ class GetStartEng extends StatelessWidget {
           // Column
           child: Column(
             children: [
+              // Title
               Text("Welcome to AgriGO",
                   style: TextStyle(
                     color: Colors.green.shade800,
@@ -49,6 +50,8 @@ class GetStartEng extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const SignUpEng()));
                 },
+
+                // Styling the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -56,6 +59,8 @@ class GetStartEng extends StatelessWidget {
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
+
+                // Button text
                 child: const Text(
                   "REGISTER",
                   style: TextStyle(
@@ -75,6 +80,8 @@ class GetStartEng extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const LogInEng()));
                 },
+
+                // Styling the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -82,6 +89,8 @@ class GetStartEng extends StatelessWidget {
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
+
+                // Button text
                 child: const Text(
                   "LOG IN",
                   style: TextStyle(
@@ -99,6 +108,8 @@ class GetStartEng extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const HomeEng()));
                 },
+
+                // Styling the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -106,6 +117,8 @@ class GetStartEng extends StatelessWidget {
                   ),
                   backgroundColor: const Color.fromARGB(255, 238, 232, 232),
                 ),
+
+                // Button text
                 child: const Text(
                   "SKIP",
                   style: TextStyle(
