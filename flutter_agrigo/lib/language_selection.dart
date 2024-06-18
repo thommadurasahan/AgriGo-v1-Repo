@@ -10,6 +10,7 @@ class LanguageSelection extends StatefulWidget {
 }
 
 class _LanguageSelectionState extends State<LanguageSelection> {
+  // Switches for Language Selection
   bool isSelectedSwitch1 = true;
   bool isSelectedSwitch2 = false;
 
@@ -23,6 +24,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
           // Column
           child: Column(
             children: [
+              // Title
               Text(
                 "Select Your Language",
                 style: TextStyle(
@@ -41,10 +43,13 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // Sinhala Language Text
                     const Text(
                       "සිංහල",
                       style: TextStyle(fontSize: 32, color: Colors.black),
                     ),
+
+                    // Switch for Sinhala Language
                     Switch(
                       value: isSelectedSwitch1,
                       onChanged: (value) {
@@ -56,6 +61,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                           }
                         });
                       },
+
+                      // Set color of the switch according to the state
                       activeTrackColor: const Color(0xFF25DA15),
                       activeColor: Colors.white,
                     ),
@@ -72,10 +79,13 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // English Language Text
                     const Text(
                       "English",
                       style: TextStyle(fontSize: 32, color: Colors.black),
                     ),
+
+                    // Switch for English Language
                     Switch(
                       value: isSelectedSwitch2,
                       onChanged: (value) {
@@ -87,6 +97,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                           }
                         });
                       },
+
+                      // Set color of the switch according to the state
                       activeTrackColor: const Color(0xFF25DA15),
                       activeColor: Colors.white,
                     ),
@@ -98,6 +110,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
               // GO Button
               ElevatedButton(
                 onPressed: () {
+                  // Navigate to the Get Started screen according to the selected Language
                   if (isSelectedSwitch2) {
                     Navigator.push(
                         context,
@@ -110,6 +123,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                             builder: (context) => const GetStartSin()));
                   }
                 },
+
+                // Add style to the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -117,6 +132,8 @@ class _LanguageSelectionState extends State<LanguageSelection> {
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
+
+                // Button Text
                 child: const Text(
                   "GO",
                   style: TextStyle(
