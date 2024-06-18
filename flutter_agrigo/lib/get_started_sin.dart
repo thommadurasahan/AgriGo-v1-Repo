@@ -17,7 +17,9 @@ class GetStartSin extends StatelessWidget {
           // Column
           child: Column(
             children: [
+              // Title
               Text("AgriGO වෙත පිළිගන්නෙමු",
+                  // Set the text style
                   style: TextStyle(
                     color: Colors.green.shade800,
                     fontWeight: FontWeight.bold,
@@ -49,6 +51,8 @@ class GetStartSin extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const SignUpSin()));
                 },
+
+                // Set the style of the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -56,6 +60,8 @@ class GetStartSin extends StatelessWidget {
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
+
+                // Set the button text
                 child: const Text(
                   "ලියාපදිංචි වන්න",
                   style: TextStyle(fontSize: 24, color: Colors.white),
@@ -72,6 +78,8 @@ class GetStartSin extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const LogInSin()));
                 },
+
+                // Set the style of the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -79,6 +87,8 @@ class GetStartSin extends StatelessWidget {
                   ),
                   backgroundColor: const Color(0xFF25DA15),
                 ),
+
+                // Set the button text
                 child: const Text(
                   "නැවත ඇතුළු වන්න",
                   style: TextStyle(fontSize: 24, color: Colors.white),
@@ -93,6 +103,8 @@ class GetStartSin extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const HomeSin()));
                 },
+
+                // Set the style of the button
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(400, 60),
                   shape: RoundedRectangleBorder(
@@ -100,6 +112,8 @@ class GetStartSin extends StatelessWidget {
                   ),
                   backgroundColor: const Color.fromARGB(255, 238, 232, 232),
                 ),
+
+                // Set the button text
                 child: const Text(
                   "මඟ හරින්න",
                   style: TextStyle(fontSize: 24, color: Colors.black),
